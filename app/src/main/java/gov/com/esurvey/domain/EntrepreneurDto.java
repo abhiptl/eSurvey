@@ -28,6 +28,64 @@ public class EntrepreneurDto implements Serializable {
 	private List<String> businessTypes;
 	private String competitorCount;
 
+	private String noOfMonthsNormalSeason;
+	private String noOfMonthsHighSeason;
+
+	private String totalSalesCreditNormalSeason;
+	private String totalSalesCreditHighSeason;
+
+	private String totalSalesCashNormalSeason;
+	private String totalSalesCashHighSeason;
+
+	private String costRawMaterialCashNormalSeason;
+	private String costRawMaterialCashHighSeason;
+
+
+	private String costRawMaterialCreditNormalSeason;
+	private String costRawMaterialCreditHighSeason;
+
+	private String purchaseFrequencyNormalSeason;
+	private String purchaseFrequencyHighSeason;
+
+	private String wagesWithdrawnNormalSeason;
+	private String wagesWithdrawnHighSeason;
+
+	private String rentNormalSeason;
+	private String rentHighSeason;
+
+	private String electricityCostNormalSeason;
+	private String electricityCostHighSeason;
+
+	private String transportationCostNormalSeason;
+	private String transportationHighSeason;
+
+	private String packagingCostNormalSeason;
+	private String packagingCostHighSeason;
+
+	private String fuelCostNormalSeason;
+	private String fuelCostHighSeason;
+
+	private String commissionNormalSeason;
+	private String commissionHighSeason;
+
+	private String wastageCostNormalSeason;
+	private String wastageCostHighSeason;
+
+	private String wagesPaidNormalSeason;
+	private String wagesPaidHighSeason;
+
+	private String promotionCostNormalSeason;
+	private String promotionCostHighSeason;
+
+	private String communicationCostNormalSeason;
+	private String communicationCostHighSeason;
+
+	private String machineRepairCostNormalSeason;
+	private String machineRepairCostHighSeason;
+
+	private String otherCostNormalSeason;
+	private String otherCostHighSeason;
+
 	public String getState() {
 		return state;
 	}
@@ -146,5 +204,309 @@ public class EntrepreneurDto implements Serializable {
 
 	public void setCompetitorCount(String competitorCount) {
 		this.competitorCount = competitorCount;
+	}
+
+	public String getNoOfMonthsNormalSeason() {
+		return noOfMonthsNormalSeason;
+	}
+
+	public void setNoOfMonthsNormalSeason(String noOfMonthsNormalSeason) {
+		this.noOfMonthsNormalSeason = noOfMonthsNormalSeason;
+	}
+
+	public String getNoOfMonthsHighSeason() {
+		return noOfMonthsHighSeason;
+	}
+
+	public void setNoOfMonthsHighSeason(String noOfMonthsHighSeason) {
+		this.noOfMonthsHighSeason = noOfMonthsHighSeason;
+	}
+
+	public String getTotalSalesCreditNormalSeason() {
+		return totalSalesCreditNormalSeason;
+	}
+
+	public void setTotalSalesCreditNormalSeason(String totalSalesCreditNormalSeason) {
+		this.totalSalesCreditNormalSeason = totalSalesCreditNormalSeason;
+	}
+
+	public String getTotalSalesCreditHighSeason() {
+		return totalSalesCreditHighSeason;
+	}
+
+	public void setTotalSalesCreditHighSeason(String totalSalesCreditHighSeason) {
+		this.totalSalesCreditHighSeason = totalSalesCreditHighSeason;
+	}
+
+	public String getTotalSalesCashNormalSeason() {
+		return totalSalesCashNormalSeason;
+	}
+
+	public void setTotalSalesCashNormalSeason(String totalSalesCashNormalSeason) {
+		this.totalSalesCashNormalSeason = totalSalesCashNormalSeason;
+	}
+
+	public String getTotalSalesCashHighSeason() {
+		return totalSalesCashHighSeason;
+	}
+
+	public void setTotalSalesCashHighSeason(String totalSalesCashHighSeason) {
+		this.totalSalesCashHighSeason = totalSalesCashHighSeason;
+	}
+
+	public String getCostRawMaterialCashNormalSeason() {
+		return costRawMaterialCashNormalSeason;
+	}
+
+	public void setCostRawMaterialCashNormalSeason(String costRawMaterialCashNormalSeason) {
+		this.costRawMaterialCashNormalSeason = costRawMaterialCashNormalSeason;
+	}
+
+	public String getCostRawMaterialCashHighSeason() {
+		return costRawMaterialCashHighSeason;
+	}
+
+	public void setCostRawMaterialCashHighSeason(String costRawMaterialCashHighSeason) {
+		this.costRawMaterialCashHighSeason = costRawMaterialCashHighSeason;
+	}
+
+	public String getCostRawMaterialCreditNormalSeason() {
+		return costRawMaterialCreditNormalSeason;
+	}
+
+	public void setCostRawMaterialCreditNormalSeason(String costRawMaterialCreditNormalSeason) {
+		this.costRawMaterialCreditNormalSeason = costRawMaterialCreditNormalSeason;
+	}
+
+	public String getCostRawMaterialCreditHighSeason() {
+		return costRawMaterialCreditHighSeason;
+	}
+
+	public void setCostRawMaterialCreditHighSeason(String costRawMaterialCreditHighSeason) {
+		this.costRawMaterialCreditHighSeason = costRawMaterialCreditHighSeason;
+	}
+
+	public String getPurchaseFrequencyNormalSeason() {
+		return purchaseFrequencyNormalSeason;
+	}
+
+	public void setPurchaseFrequencyNormalSeason(String purchaseFrequencyNormalSeason) {
+		this.purchaseFrequencyNormalSeason = purchaseFrequencyNormalSeason;
+	}
+
+	public String getPurchaseFrequencyHighSeason() {
+		return purchaseFrequencyHighSeason;
+	}
+
+	public void setPurchaseFrequencyHighSeason(String purchaseFrequencyHighSeason) {
+		this.purchaseFrequencyHighSeason = purchaseFrequencyHighSeason;
+	}
+
+	public String getWagesWithdrawnNormalSeason() {
+		return wagesWithdrawnNormalSeason;
+	}
+
+	public void setWagesWithdrawnNormalSeason(String wagesWithdrawnNormalSeason) {
+		this.wagesWithdrawnNormalSeason = wagesWithdrawnNormalSeason;
+	}
+
+	public String getWagesWithdrawnHighSeason() {
+		return wagesWithdrawnHighSeason;
+	}
+
+	public void setWagesWithdrawnHighSeason(String wagesWithdrawnHighSeason) {
+		this.wagesWithdrawnHighSeason = wagesWithdrawnHighSeason;
+	}
+
+	public String getRentNormalSeason() {
+		return rentNormalSeason;
+	}
+
+	public void setRentNormalSeason(String rentNormalSeason) {
+		this.rentNormalSeason = rentNormalSeason;
+	}
+
+	public String getRentHighSeason() {
+		return rentHighSeason;
+	}
+
+	public void setRentHighSeason(String rentHighSeason) {
+		this.rentHighSeason = rentHighSeason;
+	}
+
+	public String getElectricityCostNormalSeason() {
+		return electricityCostNormalSeason;
+	}
+
+	public void setElectricityCostNormalSeason(String electricityCostNormalSeason) {
+		this.electricityCostNormalSeason = electricityCostNormalSeason;
+	}
+
+	public String getElectricityCostHighSeason() {
+		return electricityCostHighSeason;
+	}
+
+	public void setElectricityCostHighSeason(String electricityCostHighSeason) {
+		this.electricityCostHighSeason = electricityCostHighSeason;
+	}
+
+	public String getTransportationCostNormalSeason() {
+		return transportationCostNormalSeason;
+	}
+
+	public void setTransportationCostNormalSeason(String transportationCostNormalSeason) {
+		this.transportationCostNormalSeason = transportationCostNormalSeason;
+	}
+
+	public String getTransportationHighSeason() {
+		return transportationHighSeason;
+	}
+
+	public void setTransportationHighSeason(String transportationHighSeason) {
+		this.transportationHighSeason = transportationHighSeason;
+	}
+
+	public String getPackagingCostNormalSeason() {
+		return packagingCostNormalSeason;
+	}
+
+	public void setPackagingCostNormalSeason(String packagingCostNormalSeason) {
+		this.packagingCostNormalSeason = packagingCostNormalSeason;
+	}
+
+	public String getPackagingCostHighSeason() {
+		return packagingCostHighSeason;
+	}
+
+	public void setPackagingCostHighSeason(String packagingCostHighSeason) {
+		this.packagingCostHighSeason = packagingCostHighSeason;
+	}
+
+	public String getFuelCostNormalSeason() {
+		return fuelCostNormalSeason;
+	}
+
+	public void setFuelCostNormalSeason(String fuelCostNormalSeason) {
+		this.fuelCostNormalSeason = fuelCostNormalSeason;
+	}
+
+	public String getFuelCostHighSeason() {
+		return fuelCostHighSeason;
+	}
+
+	public void setFuelCostHighSeason(String fuelCostHighSeason) {
+		this.fuelCostHighSeason = fuelCostHighSeason;
+	}
+
+	public String getCommissionNormalSeason() {
+		return commissionNormalSeason;
+	}
+
+	public void setCommissionNormalSeason(String commissionNormalSeason) {
+		this.commissionNormalSeason = commissionNormalSeason;
+	}
+
+	public String getCommissionHighSeason() {
+		return commissionHighSeason;
+	}
+
+	public void setCommissionHighSeason(String commissionHighSeason) {
+		this.commissionHighSeason = commissionHighSeason;
+	}
+
+	public String getWastageCostNormalSeason() {
+		return wastageCostNormalSeason;
+	}
+
+	public void setWastageCostNormalSeason(String wastageCostNormalSeason) {
+		this.wastageCostNormalSeason = wastageCostNormalSeason;
+	}
+
+	public String getWastageCostHighSeason() {
+		return wastageCostHighSeason;
+	}
+
+	public void setWastageCostHighSeason(String wastageCostHighSeason) {
+		this.wastageCostHighSeason = wastageCostHighSeason;
+	}
+
+	public String getWagesPaidNormalSeason() {
+		return wagesPaidNormalSeason;
+	}
+
+	public void setWagesPaidNormalSeason(String wagesPaidNormalSeason) {
+		this.wagesPaidNormalSeason = wagesPaidNormalSeason;
+	}
+
+	public String getWagesPaidHighSeason() {
+		return wagesPaidHighSeason;
+	}
+
+	public void setWagesPaidHighSeason(String wagesPaidHighSeason) {
+		this.wagesPaidHighSeason = wagesPaidHighSeason;
+	}
+
+	public String getPromotionCostNormalSeason() {
+		return promotionCostNormalSeason;
+	}
+
+	public void setPromotionCostNormalSeason(String promotionCostNormalSeason) {
+		this.promotionCostNormalSeason = promotionCostNormalSeason;
+	}
+
+	public String getPromotionCostHighSeason() {
+		return promotionCostHighSeason;
+	}
+
+	public void setPromotionCostHighSeason(String promotionCostHighSeason) {
+		this.promotionCostHighSeason = promotionCostHighSeason;
+	}
+
+	public String getCommunicationCostNormalSeason() {
+		return communicationCostNormalSeason;
+	}
+
+	public void setCommunicationCostNormalSeason(String communicationCostNormalSeason) {
+		this.communicationCostNormalSeason = communicationCostNormalSeason;
+	}
+
+	public String getCommunicationCostHighSeason() {
+		return communicationCostHighSeason;
+	}
+
+	public void setCommunicationCostHighSeason(String communicationCostHighSeason) {
+		this.communicationCostHighSeason = communicationCostHighSeason;
+	}
+
+	public String getMachineRepairCostNormalSeason() {
+		return machineRepairCostNormalSeason;
+	}
+
+	public void setMachineRepairCostNormalSeason(String machineRepairCostNormalSeason) {
+		this.machineRepairCostNormalSeason = machineRepairCostNormalSeason;
+	}
+
+	public String getMachineRepairCostHighSeason() {
+		return machineRepairCostHighSeason;
+	}
+
+	public void setMachineRepairCostHighSeason(String machineRepairCostHighSeason) {
+		this.machineRepairCostHighSeason = machineRepairCostHighSeason;
+	}
+
+	public String getOtherCostNormalSeason() {
+		return otherCostNormalSeason;
+	}
+
+	public void setOtherCostNormalSeason(String otherCostNormalSeason) {
+		this.otherCostNormalSeason = otherCostNormalSeason;
+	}
+
+	public String getOtherCostHighSeason() {
+		return otherCostHighSeason;
+	}
+
+	public void setOtherCostHighSeason(String otherCostHighSeason) {
+		this.otherCostHighSeason = otherCostHighSeason;
 	}
 }
