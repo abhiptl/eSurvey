@@ -377,10 +377,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"/>
 
-        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
-            <Button android:id="@+id/buttonNext" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="Next"  android:textColor="@color/colorWhite" android:background="@color/colorPrimary"
-                    android:layout_marginLeft="300dp"
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:orientation="horizontal"
+                      android:weightSum="2">
+            <Button android:id="@+id/buttonNext" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Next" android:layout_weight="1" android:textColor="@color/colorWhite"
+                    android:background="@color/colorPrimary"
                     android:textStyle="bold"
                     android:textSize="20dp"/>
 
