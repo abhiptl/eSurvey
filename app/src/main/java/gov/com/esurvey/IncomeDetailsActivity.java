@@ -330,10 +330,10 @@ public class IncomeDetailsActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				buildEntrepreneurDto();
-				//TODO call next activity
-				/*Intent intent = new Intent(getApplicationContext(), EntrepreneurActivity.class);
+
+				Intent intent = new Intent(getApplicationContext(), CapitalDetailActivity.class);
 				intent.putExtra(MainActivity.ENTREPRENEUR_DTO, entrepreneurDto);
-				startActivity(intent);*/
+				startActivity(intent);
 			}
 		});
 
