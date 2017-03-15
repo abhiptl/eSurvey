@@ -1,6 +1,7 @@
 package gov.com.esurvey;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -8,9 +9,9 @@ import java.util.Set;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -128,6 +129,10 @@ public class EntrepreneurActivity extends AppCompatActivity {
 		casts.add(getResources().getString(R.string.caste_obc));
 		casts.add(getResources().getString(R.string.caste_general));
 
+		initVillages();
+		initBusinessTypes();
+
+
 		entrepreneurDto = (EntrepreneurDto)(getIntent().getSerializableExtra(MainActivity.ENTREPRENEUR_DTO));
 
 		if(entrepreneurDto.getState() != null) {
@@ -143,7 +148,7 @@ public class EntrepreneurActivity extends AppCompatActivity {
 		}
 
 		if(entrepreneurDto.getVillage() != null) {
-			eTextBlock.setText(entrepreneurDto.getVillage());
+			eTextVillage.setText(entrepreneurDto.getVillage());
 		}
 
 		if(entrepreneurDto.getName() != null) {
@@ -183,7 +188,7 @@ public class EntrepreneurActivity extends AppCompatActivity {
 		}
 
 		if(entrepreneurDto.getBusinessTypes() != null && entrepreneurDto.getBusinessTypes().size() != 0) {
-			textSelectedBusinessTypes.setText(entrepreneurDto.getBusinessTypes().toString());
+			textSelectedBusinessTypes.setText(TextUtils.join(",", entrepreneurDto.getBusinessTypes()));
 		}
 
 		if(entrepreneurDto.getCompetitorCount() != null) {
@@ -328,7 +333,9 @@ public class EntrepreneurActivity extends AppCompatActivity {
 	public boolean validate() {
 		boolean valid = true;
 
-
+		if(eTextVillage.getText() == null || eTextVillage.getText().length() == 0) {
+			eTextVillage.setError(getResources().getString(R.string.error_required));
+		}
 
 		return valid;
 	}
@@ -336,11 +343,47 @@ public class EntrepreneurActivity extends AppCompatActivity {
 	public void next() {
 		Log.i(TAG, eTextState.getText().toString());
 
-		entrepreneurDto.setState(eTextState.getText().toString());
+		setEntrepreneurDto();
 
 		Intent intent = new Intent(this, IncomeDetailsActivity.class);
 		intent.putExtra(MainActivity.ENTREPRENEUR_DTO, entrepreneurDto);
 		startActivity(intent);
+
+	}
+
+	public void setEntrepreneurDto() {
+		entrepreneurDto.setState(eTextState.getText().toString());
+		entrepreneurDto.setDistrict(eTextDistrict.getText().toString());
+		entrepreneurDto.setBlock(eTextBlock.getText().toString());
+		entrepreneurDto.setVillage(eTextVillage.getText().toString());
+
+		entrepreneurDto.setName(eTextName.getText().toString());
+		entrepreneurDto.setPhoneNumber(eTextPhoneNumber.getText().toString());
+		entrepreneurDto.setStartYearOfBusiness(eTextYearStartBusiness.getText().toString());
+
+		RadioButton rdRoadType = (RadioButton) findViewById(radioGroupRoadType.getCheckedRadioButtonId());
+		entrepreneurDto.setRoadType(rdRoadType.getText().toString());
+
+		RadioButton rdMarketType = (RadioButton) findViewById(radioGroupMarketType.getCheckedRadioButtonId());
+		entrepreneurDto.setMarketType(rdMarketType.getText().toString());
+
+		RadioButton rdShopType = (RadioButton) findViewById(radioGroupShopType.getCheckedRadioButtonId());
+		entrepreneurDto.setShopType(rdShopType.getText().toString());
+
+		RadioButton rdBusinessSize = (RadioButton) findViewById(radioGroupSizeBusiness.getCheckedRadioButtonId());
+		entrepreneurDto.setBusinessSize(rdBusinessSize.getText().toString());
+
+		RadioButton rdReligion = (RadioButton) findViewById(radioGroupReligion.getCheckedRadioButtonId());
+		entrepreneurDto.setReligion(rdReligion.getText().toString());
+
+		RadioButton rdCaste = (RadioButton) findViewById(radioGroupCaste.getCheckedRadioButtonId());
+		entrepreneurDto.setCaste(rdCaste.getText().toString());
+
+		String businessTypes = eTextYearStartBusiness.getText().toString();
+		String[] types = businessTypes.split(",");
+		entrepreneurDto.setBusinessTypes(Arrays.asList(types));
+
+		entrepreneurDto.setCompetitorCount(eTextCompetitiorsCount.getText().toString());
 
 	}
 
@@ -368,6 +411,7 @@ public class EntrepreneurActivity extends AppCompatActivity {
 				final CharSequence[] dialogList = list.toArray(new CharSequence[list.size()]);
 				final AlertDialog.Builder builderDialog = new AlertDialog.Builder(EntrepreneurActivity.this);
 				builderDialog.setTitle("Select Business Type");
+
 				int count = dialogList.length;
 				boolean[] is_checked = new boolean[count];
 
@@ -424,5 +468,41 @@ public class EntrepreneurActivity extends AppCompatActivity {
 			}
 		});
 
+	}
+
+	public void initVillages() {
+		eTextVillage = (EditText) findViewById(R.id.eTextVillage);
+
+		final List<CharSequence> listVillages = new ArrayList<CharSequence>();
+
+		listVillages.add("Akalgarh");
+		listVillages.add("Bakhtaur Nagar");
+		listVillages.add("Bakshiwala");
+		listVillages.add("Bhagwanpura");
+		listVillages.add("Bhaini Gandhuan");
+		listVillages.add("Bharoor");
+
+		eTextVillage.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+				final CharSequence[] dialogList = listVillages.toArray(new CharSequence[listVillages.size()]);
+				final AlertDialog.Builder builderDialog = new AlertDialog.Builder(EntrepreneurActivity.this);
+				builderDialog.setTitle("Select Village");
+				final AlertDialog alert = builderDialog.create();
+
+				builderDialog.setSingleChoiceItems(dialogList, -1,  new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface villageDialog, int selectedItemIndex) {
+						eTextVillage.setText(dialogList[selectedItemIndex]);
+						villageDialog.dismiss();
+					}
+				});
+
+				builderDialog.show();
+			}
+		});
 	}
 }
