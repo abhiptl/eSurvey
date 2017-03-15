@@ -86,6 +86,24 @@ public class EntrepreneurDto implements Serializable {
 	private String otherCostNormalSeason;
 	private String otherCostHighSeason;
 
+	/* Capital details activity inputs*/
+	private String amountReceivedFromCustomer;
+	private String amountPaidToSupplied;
+
+	private String amountInvestedInStart;
+	private String amountInvestedAfterStart;
+
+	private String operationMonthsInYear;
+	private String operationDaysPerWeek;
+	private String operationHoursPerWeek;
+
+	private String entrepreneurInvolved;
+	private String entrepreneurInvolvedMonths;
+	private String familyMembersInvolved;
+	private String familyMembersInvolvedMonths;
+	private String externalLabourersInvolved;
+	private String externalLabourersInvolvedMonths;
+
 	public String getState() {
 		return state;
 	}
@@ -508,5 +526,109 @@ public class EntrepreneurDto implements Serializable {
 
 	public void setOtherCostHighSeason(String otherCostHighSeason) {
 		this.otherCostHighSeason = otherCostHighSeason;
+	}
+
+	public String getAmountReceivedFromCustomer() {
+		return amountReceivedFromCustomer;
+	}
+
+	public void setAmountReceivedFromCustomer(String amountReceivedFromCustomer) {
+		this.amountReceivedFromCustomer = amountReceivedFromCustomer;
+	}
+
+	public String getAmountPaidToSupplied() {
+		return amountPaidToSupplied;
+	}
+
+	public void setAmountPaidToSupplied(String amountPaidToSupplied) {
+		this.amountPaidToSupplied = amountPaidToSupplied;
+	}
+
+	public String getAmountInvestedInStart() {
+		return amountInvestedInStart;
+	}
+
+	public void setAmountInvestedInStart(String amountInvestedInStart) {
+		this.amountInvestedInStart = amountInvestedInStart;
+	}
+
+	public String getAmountInvestedAfterStart() {
+		return amountInvestedAfterStart;
+	}
+
+	public void setAmountInvestedAfterStart(String amountInvestedAfterStart) {
+		this.amountInvestedAfterStart = amountInvestedAfterStart;
+	}
+
+	public String getOperationMonthsInYear() {
+		return operationMonthsInYear;
+	}
+
+	public void setOperationMonthsInYear(String operationMonthsInYear) {
+		this.operationMonthsInYear = operationMonthsInYear;
+	}
+
+	public String getOperationDaysPerWeek() {
+		return operationDaysPerWeek;
+	}
+
+	public void setOperationDaysPerWeek(String operationDaysPerWeek) {
+		this.operationDaysPerWeek = operationDaysPerWeek;
+	}
+
+	public String getOperationHoursPerWeek() {
+		return operationHoursPerWeek;
+	}
+
+	public void setOperationHoursPerWeek(String operationHoursPerWeek) {
+		this.operationHoursPerWeek = operationHoursPerWeek;
+	}
+
+	public String getEntrepreneurInvolved() {
+		return entrepreneurInvolved;
+	}
+
+	public void setEntrepreneurInvolved(String entrepreneurInvolved) {
+		this.entrepreneurInvolved = entrepreneurInvolved;
+	}
+
+	public String getEntrepreneurInvolvedMonths() {
+		return entrepreneurInvolvedMonths;
+	}
+
+	public void setEntrepreneurInvolvedMonths(String entrepreneurInvolvedMonths) {
+		this.entrepreneurInvolvedMonths = entrepreneurInvolvedMonths;
+	}
+
+	public String getFamilyMembersInvolved() {
+		return familyMembersInvolved;
+	}
+
+	public void setFamilyMembersInvolved(String familyMembersInvolved) {
+		this.familyMembersInvolved = familyMembersInvolved;
+	}
+
+	public String getFamilyMembersInvolvedMonths() {
+		return familyMembersInvolvedMonths;
+	}
+
+	public void setFamilyMembersInvolvedMonths(String familyMembersInvolvedMonths) {
+		this.familyMembersInvolvedMonths = familyMembersInvolvedMonths;
+	}
+
+	public String getExternalLabourersInvolved() {
+		return externalLabourersInvolved;
+	}
+
+	public void setExternalLabourersInvolved(String externalLabourersInvolved) {
+		this.externalLabourersInvolved = externalLabourersInvolved;
+	}
+
+	public String getExternalLabourersInvolvedMonths() {
+		return externalLabourersInvolvedMonths;
+	}
+
+	public void setExternalLabourersInvolvedMonths(String externalLabourersInvolvedMonths) {
+		this.externalLabourersInvolvedMonths = externalLabourersInvolvedMonths;
 	}
 }

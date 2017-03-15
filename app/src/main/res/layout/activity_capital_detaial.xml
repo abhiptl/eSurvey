@@ -131,11 +131,11 @@
                         android:text="Entrepreneur  "
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:layout_weight="1"/>
-                <EditText android:id="@+id/eTextEntrepeneurInvolved" android:inputType="numberDecimal"
+                <EditText android:id="@+id/eTextEntrepreneurInvolved" android:inputType="numberDecimal"
                           android:layout_width="match_parent"
                           android:layout_height="wrap_content" android:layout_weight="1"/>
 
-                <EditText android:id="@+id/eTextEntrepeneurInvolvedMonths" android:inputType="numberDecimal"
+                <EditText android:id="@+id/eTextEntrepreneurInvolvedMonths" android:inputType="numberDecimal"
                           android:layout_width="match_parent"
                           android:layout_height="wrap_content" android:layout_weight="1"/>
             </LinearLayout>
