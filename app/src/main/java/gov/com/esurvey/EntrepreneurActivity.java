@@ -73,6 +73,7 @@ public class EntrepreneurActivity extends AppCompatActivity {
 		initializeValues();
 		addListeners();
 	}
+
 	public void initializeComponents() {
 		eTextState = (EditText) findViewById(R.id.eTextState);
 		eTextDistrict = (EditText) findViewById(R.id.eTextDistrict);
@@ -335,6 +336,7 @@ public class EntrepreneurActivity extends AppCompatActivity {
 
 		if(eTextVillage.getText() == null || eTextVillage.getText().length() == 0) {
 			eTextVillage.setError(getResources().getString(R.string.error_required));
+			valid = false;
 		}
 
 		return valid;
@@ -343,7 +345,7 @@ public class EntrepreneurActivity extends AppCompatActivity {
 	public void next() {
 		Log.i(TAG, eTextState.getText().toString());
 
-		setEntrepreneurDto();
+		buildEntrepreneurDto();
 
 		Intent intent = new Intent(this, IncomeDetailsActivity.class);
 		intent.putExtra(MainActivity.ENTREPRENEUR_DTO, entrepreneurDto);
@@ -351,7 +353,7 @@ public class EntrepreneurActivity extends AppCompatActivity {
 
 	}
 
-	public void setEntrepreneurDto() {
+	public void buildEntrepreneurDto() {
 		entrepreneurDto.setState(eTextState.getText().toString());
 		entrepreneurDto.setDistrict(eTextDistrict.getText().toString());
 		entrepreneurDto.setBlock(eTextBlock.getText().toString());
