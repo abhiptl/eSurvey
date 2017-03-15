@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">eSurvey</string>
+
+    <string name="state">Punjab</string>
+    <string name="district">Sangrur</string>
+    <string name="block">Sunam</string>
+
+
+    <string name="roadType_NationalHighway">National highway</string>
+    <string name="roadType_StateHighway">State highway</string>
+    <string name="roadType_MajorRoad">Major Road</string>
+    <string name="roadType_VillageRoad">Village Road</string>
+    <string name="roadType_Lane">Lane</string>
+
+    <string name="marketType_large">Large Market</string>
+    <string name="marketType_small">Small Market</string>
+    <string name="marketType_standalone">Stand alone</string>
+
+
+    <string name="shopType_fixed">Fixed Shop</string>
+    <string name="shopType_mobile">Mobile Shop</string>
+    <string name="shopType_haat">Haat</string>
+
+
+    <string name="businessSize_large">Large</string>
+    <string name="businessSize_medium">Medium</string>
+    <string name="businessSize_small">Small</string>
+
+    <string name="religion_hindu">Hindu</string>
+    <string name="religion_christian">Christian</string>
+    <string name="religion_sikh">Sikh</string>
+    <string name="religion_islam">Islam</string>
+    <string name="religion_other">Other</string>
+
+    <string name="caste_sc">SC</string>
+    <string name="caste_st">ST</string>
+    <string name="caste_bc">BC</string>
+    <string name="caste_obc">OBC</string>
+    <string name="caste_general">General</string>
+
+    <string name="error_required">Required</string>
+
 </resources>

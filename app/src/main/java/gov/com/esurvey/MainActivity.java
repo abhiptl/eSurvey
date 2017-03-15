@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import gov.com.esurvey.domain.EntrepreneurDto;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				Intent startSurveyIntent = new Intent(getApplicationContext(), EntrepreneurActivity.class);
+				startSurveyIntent.putExtra(MainActivity.ENTREPRENEUR_DTO, new EntrepreneurDto());
 				startActivity(startSurveyIntent);
 			}
 		});

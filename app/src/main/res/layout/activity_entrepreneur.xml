@@ -29,7 +29,8 @@
                         android:text="State :"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
-                <EditText android:id="@+id/eTextState" android:layout_width="fill_parent" android:layout_height="wrap_content"
+                <EditText android:id="@+id/eTextState" android:text="@string/state" android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"
                           android:singleLine="true"/>
             </LinearLayout>
 
@@ -38,7 +39,8 @@
                         android:text="District :"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
-                <EditText android:id="@+id/eTextDistrict" android:layout_width="fill_parent" android:layout_height="wrap_content"/>
+                <EditText android:id="@+id/eTextDistrict" android:text="@string/district" android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"/>
             </LinearLayout>
 
             <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
@@ -46,7 +48,8 @@
                         android:text="Block/Mandal :"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
-                <EditText android:id="@+id/eTextBlock" android:layout_width="fill_parent" android:layout_height="wrap_content"/>
+                <EditText android:id="@+id/eTextBlock" android:text="@string/block" android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"/>
             </LinearLayout>
 
             <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
@@ -54,6 +57,7 @@
                         android:text="Village :"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
+
                 <EditText android:id="@+id/eTextVillage" android:layout_width="fill_parent" android:layout_height="wrap_content"/>
             </LinearLayout>
 
@@ -112,33 +116,33 @@
                         android:id="@+id/radioNationalHighway"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="National highway"
+                        android:text="@string/roadType_NationalHighway"
                         android:checked="true"/>
 
                 <RadioButton
                         android:id="@+id/radioStateHighway"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="State highway"/>
+                        android:text="@string/roadType_StateHighway"/>
 
 
                 <RadioButton
                         android:id="@+id/radioMajorRoad"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Major Road"/>
+                        android:text="@string/roadType_MajorRoad"/>
 
                 <RadioButton
                         android:id="@+id/radioVillageRoad"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Village Road"/>
+                        android:text="@string/roadType_MajorRoad"/>
 
                 <RadioButton
                         android:id="@+id/radioLane"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Lane"/>
+                        android:text="@string/roadType_Lane"/>
 
 
             </RadioGroup>
@@ -158,20 +162,20 @@
                         android:id="@+id/radioLargeMarket"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Large Market"
+                        android:text="@string/marketType_large"
                         android:checked="true"/>
 
                 <RadioButton
                         android:id="@+id/radioSmallMarket"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Small Market"/>
+                        android:text="@string/marketType_small"/>
 
                 <RadioButton
                         android:id="@+id/radioStandalone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Stand Alone"/>
+                        android:text="@string/marketType_standalone"/>
 
             </RadioGroup>
 
@@ -191,20 +195,20 @@
                         android:id="@+id/radioFixedShop"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Fixed Shop"
+                        android:text="@string/shopType_fixed"
                         android:checked="true"/>
 
                 <RadioButton
                         android:id="@+id/radioMobileShop"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mobile Shop"/>
+                        android:text="@string/shopType_mobile"/>
 
                 <RadioButton
                         android:id="@+id/radioHaat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Haat"/>
+                        android:text="@string/shopType_haat"/>
 
             </RadioGroup>
 
@@ -224,19 +228,19 @@
                         android:id="@+id/radioLargeBusiness"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Large" android:checked="true"/>
+                        android:text="@string/businessSize_large" android:checked="true"/>
 
                 <RadioButton
                         android:id="@+id/radioMediumBusiness"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Medium"/>
+                        android:text="@string/businessSize_medium"/>
 
                 <RadioButton
                         android:id="@+id/radioSmallBusiness"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Small"/>
+                        android:text="@string/businessSize_small"/>
 
             </RadioGroup>
 
@@ -257,31 +261,31 @@
                         android:id="@+id/radioHindu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Hindu" android:checked="true"/>
+                        android:text="@string/religion_hindu" android:checked="true"/>
 
                 <RadioButton
                         android:id="@+id/radioChristian"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Christian"/>
+                        android:text="@string/religion_christian"/>
 
                 <RadioButton
                         android:id="@+id/radioSikh"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sikh"/>
+                        android:text="@string/religion_sikh"/>
 
                 <RadioButton
                         android:id="@+id/radioIslam"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Islam"/>
+                        android:text="@string/religion_islam"/>
 
                 <RadioButton
                         android:id="@+id/radioOther"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Other"/>
+                        android:text="@string/religion_other"/>
 
             </RadioGroup>
 
@@ -302,32 +306,32 @@
                         android:id="@+id/radioSC"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="SC" android:checked="true"/>
+                        android:text="@string/caste_sc" android:checked="true"/>
 
 
                 <RadioButton
                         android:id="@+id/radioST"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ST"/>
+                        android:text="@string/caste_st"/>
 
                 <RadioButton
                         android:id="@+id/radioBC"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="BC"/>
+                        android:text="@string/caste_bc"/>
 
                 <RadioButton
                         android:id="@+id/radioOBC"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="OBC"/>
+                        android:text="@string/caste_obc"/>
 
                 <RadioButton
                         android:id="@+id/radioGeneral"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="General"/>
+                        android:text="@string/caste_general"/>
 
 
             </RadioGroup>

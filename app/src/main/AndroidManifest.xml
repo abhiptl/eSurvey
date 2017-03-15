@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".EntrepreneurActivity">
         </activity>
+        <activity android:name=".IncomeDetailsActivity">
+        </activity>
     </application>
 
 </manifest>
