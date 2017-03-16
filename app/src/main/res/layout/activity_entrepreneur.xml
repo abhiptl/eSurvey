@@ -15,51 +15,28 @@
             android:paddingBottom="@dimen/activity_vertical_margin"
             tools:context="gov.com.esurvey.EntrepreneurActivity">
 
-        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
             <TextView
                     android:text="1. Location of Enterprise"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textSize="20dp"/>
 
+            <EditText android:id="@+id/eTextState" android:text="@string/state" android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:hint="Enter State"/>
 
-            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                <TextView
-                        android:text="State :"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                <EditText android:id="@+id/eTextState" android:text="@string/state" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content"
-                          android:singleLine="true"/>
-            </LinearLayout>
+            <EditText android:id="@+id/eTextDistrict" android:text="@string/district" android:layout_width="match_parent"
+                      android:layout_height="wrap_content" android:hint="Enter District"/>
 
-            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                <TextView
-                        android:text="District :"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                <EditText android:id="@+id/eTextDistrict" android:text="@string/district" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content"/>
-            </LinearLayout>
+            <EditText android:id="@+id/eTextBlock" android:text="@string/block" android:layout_width="match_parent"
+                      android:layout_height="wrap_content" />
 
-            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                <TextView
-                        android:text="Block/Mandal :"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                <EditText android:id="@+id/eTextBlock" android:text="@string/block" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content"/>
-            </LinearLayout>
+            <EditText android:id="@+id/eTextVillage" android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:hint="Choose Village "/>
 
-            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                <TextView
-                        android:text="Village :"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
 
-                <EditText android:id="@+id/eTextVillage" android:layout_width="fill_parent" android:layout_height="wrap_content"/>
-            </LinearLayout>
 
             <Space
                     android:layout_width="wrap_content"
@@ -72,75 +49,58 @@
                     android:textStyle="bold"
                     android:textSize="20dp"/>
 
-            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                <TextView
-                        android:text="Name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                <EditText android:id="@+id/eTextName" android:layout_width="fill_parent" android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                <TextView
-                        android:text="Phone number"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                <EditText android:id="@+id/eTextPhoneNumber" android:layout_width="fill_parent" android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                <TextView
-                        android:text="Year of Start Business"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                <EditText android:id="@+id/eTextYearStartBusiness" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content"/>
-            </LinearLayout>
+            <EditText android:id="@+id/eTextName" android:hint="Full Name" android:layout_width="match_parent"
+                      android:layout_height="wrap_content"/>
+            <EditText android:id="@+id/eTextPhoneNumber" android:inputType="number"  android:hint="Phone Number"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"/>
+            <EditText android:id="@+id/eTextYearStartBusiness"  android:inputType="number" android:hint="Year of Start Business" android:layout_width="match_parent"
+                      android:layout_height="wrap_content"/>
 
             <Space
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"/>
 
             <TextView
-                    android:text="3. Select road type"
-                    android:layout_width="wrap_content"
+                    android:text="3. Select Road type"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textSize="20dp"/>
 
 
-            <RadioGroup android:id="@+id/radioGroupRoadType" android:layout_width="wrap_content"
+            <RadioGroup android:id="@+id/radioGroupRoadType" android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                 <RadioButton
                         android:id="@+id/radioNationalHighway"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/roadType_NationalHighway"
                         android:checked="true"/>
 
                 <RadioButton
                         android:id="@+id/radioStateHighway"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/roadType_StateHighway"/>
 
 
                 <RadioButton
                         android:id="@+id/radioMajorRoad"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/roadType_MajorRoad"/>
 
                 <RadioButton
                         android:id="@+id/radioVillageRoad"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/roadType_MajorRoad"/>
 
                 <RadioButton
                         android:id="@+id/radioLane"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/roadType_Lane"/>
 
@@ -152,28 +112,28 @@
 
             <TextView
                     android:text="4. Select Market type"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textSize="20dp"/>
 
-            <RadioGroup android:id="@+id/radioGroupMarketType" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioGroup android:id="@+id/radioGroupMarketType" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <RadioButton
                         android:id="@+id/radioLargeMarket"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/marketType_large"
                         android:checked="true"/>
 
                 <RadioButton
                         android:id="@+id/radioSmallMarket"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/marketType_small"/>
 
                 <RadioButton
                         android:id="@+id/radioStandalone"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/marketType_standalone"/>
 
@@ -185,28 +145,28 @@
 
             <TextView
                     android:text="5. Select Shop Type"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textSize="20dp"/>
 
-            <RadioGroup android:id="@+id/radioGroupShopType" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioGroup android:id="@+id/radioGroupShopType" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <RadioButton
                         android:id="@+id/radioFixedShop"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/shopType_fixed"
                         android:checked="true"/>
 
                 <RadioButton
                         android:id="@+id/radioMobileShop"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/shopType_mobile"/>
 
                 <RadioButton
                         android:id="@+id/radioHaat"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/shopType_haat"/>
 
@@ -218,27 +178,27 @@
 
             <TextView
                     android:text="6. Select size of Business"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textSize="20dp"/>
 
-            <RadioGroup android:id="@+id/radioGroupSizeBusiness" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioGroup android:id="@+id/radioGroupSizeBusiness" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <RadioButton
                         android:id="@+id/radioLargeBusiness"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/businessSize_large" android:checked="true"/>
 
                 <RadioButton
                         android:id="@+id/radioMediumBusiness"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/businessSize_medium"/>
 
                 <RadioButton
                         android:id="@+id/radioSmallBusiness"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/businessSize_small"/>
 
@@ -251,39 +211,39 @@
 
             <TextView
                     android:text="6. Religion"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textSize="20dp"/>
 
-            <RadioGroup android:id="@+id/radioGroupReligion" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioGroup android:id="@+id/radioGroupReligion" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <RadioButton
                         android:id="@+id/radioHindu"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/religion_hindu" android:checked="true"/>
 
                 <RadioButton
                         android:id="@+id/radioChristian"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/religion_christian"/>
 
                 <RadioButton
                         android:id="@+id/radioSikh"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/religion_sikh"/>
 
                 <RadioButton
                         android:id="@+id/radioIslam"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/religion_islam"/>
 
                 <RadioButton
                         android:id="@+id/radioOther"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/religion_other"/>
 
@@ -295,41 +255,41 @@
 
             <TextView
                     android:text="7. Caste"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textSize="20dp"/>
 
-            <RadioGroup android:id="@+id/radioGroupCaste" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioGroup android:id="@+id/radioGroupCaste" android:layout_width="match_parent" android:layout_height="wrap_content">
 
                 <RadioButton
                         android:id="@+id/radioSC"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/caste_sc" android:checked="true"/>
 
 
                 <RadioButton
                         android:id="@+id/radioST"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/caste_st"/>
 
                 <RadioButton
                         android:id="@+id/radioBC"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/caste_bc"/>
 
                 <RadioButton
                         android:id="@+id/radioOBC"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/caste_obc"/>
 
                 <RadioButton
                         android:id="@+id/radioGeneral"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/caste_general"/>
 
@@ -343,14 +303,14 @@
 
             <TextView
                     android:text="9. Business Type"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textSize="20dp"/>
 
             <TextView
                     android:id="@+id/textSelectedBusinessTypes"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#555555"
                     android:singleLine="true"
@@ -364,23 +324,18 @@
                     android:layout_height="20dp"/>
 
 
-            <TextView
-                    android:text="10. Number of competitors in the vicinity that affect the business "
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="20dp"/>
-
-            <EditText android:id="@+id/eTextCompetitiorsCount" android:layout_width="fill_parent" android:layout_height="wrap_content"/>
+            <EditText android:inputType="number" android:hint="10. Number of competitors in the vicinity that affect the business"
+                      android:id="@+id/eTextCompetitiorsCount" android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"/>
 
             <Space
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"/>
 
-            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
-                <Button android:id="@+id/buttonNext" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <Button android:id="@+id/buttonNext" android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:text="Next"  android:textColor="@color/colorWhite" android:background="@color/colorPrimary"
-                        android:layout_marginLeft="300dp"
+
                         android:textStyle="bold"
                         android:textSize="20dp"/>
 
