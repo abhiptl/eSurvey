@@ -372,10 +372,14 @@ public class MonthlySaleTrendsActivity extends AppCompatActivity {
 				buildEntrepreneurDto();
 				Log.i(TAG, entrepreneurDto.toString());
 				// TODO save data locally and call Main activity with Toast message
+				Toast.makeText(getApplicationContext(), "Survey has been saved. Please sync to submit", Toast
+						.LENGTH_LONG)
+						.show();
+
 				Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 				//intent.putExtra(MainActivity.ENTREPRENEUR_DTO, entrepreneurDto);
 				startActivity(intent);
-				Toast.makeText(getApplicationContext(), "Survey has been submitted successfully", Toast.LENGTH_LONG);
+
 			}
 		});
 
