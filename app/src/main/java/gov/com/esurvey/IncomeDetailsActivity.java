@@ -1,17 +1,16 @@
 package gov.com.esurvey;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import gov.com.esurvey.domain.EntrepreneurDto;
+import gov.com.esurvey.domain.SurveyDto;
 
 public class IncomeDetailsActivity extends AppCompatActivity {
 
-	private EntrepreneurDto entrepreneurDto;
+	private SurveyDto surveyDto;
 
 	private EditText noOfMonthsNormalSeason;
 	private EditText noOfMonthsHighSeason;
@@ -82,7 +81,7 @@ public class IncomeDetailsActivity extends AppCompatActivity {
 
 		init();
 
-		entrepreneurDto = (EntrepreneurDto)(getIntent().getSerializableExtra(MainActivity.ENTREPRENEUR_DTO));
+		surveyDto = (SurveyDto)(getIntent().getSerializableExtra(MainActivity.ENTREPRENEUR_DTO));
 
 
 	}
@@ -153,158 +152,158 @@ public class IncomeDetailsActivity extends AppCompatActivity {
 	}
 
 	public void initializeValues() {
-		entrepreneurDto = (EntrepreneurDto)(getIntent().getSerializableExtra(MainActivity.ENTREPRENEUR_DTO));
+		surveyDto = (SurveyDto)(getIntent().getSerializableExtra(MainActivity.ENTREPRENEUR_DTO));
 
-		if(entrepreneurDto.getNoOfMonthsNormalSeason() != null) {
-			noOfMonthsNormalSeason.setText(entrepreneurDto.getNoOfMonthsNormalSeason());
+		if(surveyDto.getNoOfMonthsNormalSeason() != null) {
+			noOfMonthsNormalSeason.setText(surveyDto.getNoOfMonthsNormalSeason());
 		}
 
-		if(entrepreneurDto.getNoOfMonthsHighSeason() != null) {
-			noOfMonthsHighSeason.setText(entrepreneurDto.getNoOfMonthsHighSeason());
+		if(surveyDto.getNoOfMonthsHighSeason() != null) {
+			noOfMonthsHighSeason.setText(surveyDto.getNoOfMonthsHighSeason());
 		}
 
-		if(entrepreneurDto.getTotalSalesCreditNormalSeason() != null) {
-			totalSalesCreditNormalSeason.setText(entrepreneurDto.getTotalSalesCreditNormalSeason());
+		if(surveyDto.getTotalSalesCreditNormalSeason() != null) {
+			totalSalesCreditNormalSeason.setText(surveyDto.getTotalSalesCreditNormalSeason());
 		}
 
-		if(entrepreneurDto.getTotalSalesCreditHighSeason() != null) {
-			totalSalesCreditHighSeason.setText(entrepreneurDto.getTotalSalesCreditHighSeason() );
+		if(surveyDto.getTotalSalesCreditHighSeason() != null) {
+			totalSalesCreditHighSeason.setText(surveyDto.getTotalSalesCreditHighSeason() );
 		}
 
-		if(entrepreneurDto.getTotalSalesCashNormalSeason() != null) {
-			totalSalesCashNormalSeason.setText(entrepreneurDto.getTotalSalesCashNormalSeason());
+		if(surveyDto.getTotalSalesCashNormalSeason() != null) {
+			totalSalesCashNormalSeason.setText(surveyDto.getTotalSalesCashNormalSeason());
 		}
 
-		if(entrepreneurDto.getTotalSalesCashHighSeason() != null) {
-			totalSalesCashHighSeason.setText(entrepreneurDto.getTotalSalesCashHighSeason());
+		if(surveyDto.getTotalSalesCashHighSeason() != null) {
+			totalSalesCashHighSeason.setText(surveyDto.getTotalSalesCashHighSeason());
 		}
 
-		if(entrepreneurDto.getCostRawMaterialCashNormalSeason() != null) {
-			costRawMaterialCashNormalSeason.setText(entrepreneurDto.getCostRawMaterialCashNormalSeason());
+		if(surveyDto.getCostRawMaterialCashNormalSeason() != null) {
+			costRawMaterialCashNormalSeason.setText(surveyDto.getCostRawMaterialCashNormalSeason());
 		}
 
-		if(entrepreneurDto.getCostRawMaterialCashHighSeason() != null) {
-			costRawMaterialCashHighSeason.setText(entrepreneurDto.getCostRawMaterialCashHighSeason());
+		if(surveyDto.getCostRawMaterialCashHighSeason() != null) {
+			costRawMaterialCashHighSeason.setText(surveyDto.getCostRawMaterialCashHighSeason());
 		}
 
-		if(entrepreneurDto.getCostRawMaterialCreditNormalSeason() != null) {
-			costRawMaterialCreditNormalSeason.setText(entrepreneurDto.getCostRawMaterialCreditNormalSeason() );
+		if(surveyDto.getCostRawMaterialCreditNormalSeason() != null) {
+			costRawMaterialCreditNormalSeason.setText(surveyDto.getCostRawMaterialCreditNormalSeason() );
 		}
 
-		if(entrepreneurDto.getCostRawMaterialCreditHighSeason() != null) {
-			costRawMaterialCreditHighSeason.setText(entrepreneurDto.getCostRawMaterialCreditHighSeason());
+		if(surveyDto.getCostRawMaterialCreditHighSeason() != null) {
+			costRawMaterialCreditHighSeason.setText(surveyDto.getCostRawMaterialCreditHighSeason());
 		}
 
-		if(entrepreneurDto.getPurchaseFrequencyNormalSeason() != null) {
-			purchaseFrequencyNormalSeason.setText(entrepreneurDto.getPurchaseFrequencyNormalSeason().toString());
+		if(surveyDto.getPurchaseFrequencyNormalSeason() != null) {
+			purchaseFrequencyNormalSeason.setText(surveyDto.getPurchaseFrequencyNormalSeason().toString());
 		}
 
-		if(entrepreneurDto.getPurchaseFrequencyHighSeason() != null) {
-			purchaseFrequencyHighSeason.setText(entrepreneurDto.getPurchaseFrequencyHighSeason());
+		if(surveyDto.getPurchaseFrequencyHighSeason() != null) {
+			purchaseFrequencyHighSeason.setText(surveyDto.getPurchaseFrequencyHighSeason());
 		}
 
-		if(entrepreneurDto.getWagesWithdrawnNormalSeason() != null) {
-			wagesWithdrawnNormalSeason.setText(entrepreneurDto.getWagesWithdrawnNormalSeason());
+		if(surveyDto.getWagesWithdrawnNormalSeason() != null) {
+			wagesWithdrawnNormalSeason.setText(surveyDto.getWagesWithdrawnNormalSeason());
 		}
 
-		if(entrepreneurDto.getWagesWithdrawnHighSeason() != null) {
-			wagesWithdrawnHighSeason.setText(entrepreneurDto.getWagesWithdrawnHighSeason());
+		if(surveyDto.getWagesWithdrawnHighSeason() != null) {
+			wagesWithdrawnHighSeason.setText(surveyDto.getWagesWithdrawnHighSeason());
 		}
 
-		if(entrepreneurDto.getRentNormalSeason() != null) {
-			rentNormalSeason.setText(entrepreneurDto.getRentNormalSeason());
+		if(surveyDto.getRentNormalSeason() != null) {
+			rentNormalSeason.setText(surveyDto.getRentNormalSeason());
 		}
 
-		if(entrepreneurDto.getRentHighSeason() != null) {
-			rentHighSeason.setText(entrepreneurDto.getRentHighSeason());
+		if(surveyDto.getRentHighSeason() != null) {
+			rentHighSeason.setText(surveyDto.getRentHighSeason());
 		}
 
-		if(entrepreneurDto.getElectricityCostNormalSeason() != null) {
-			electricityCostNormalSeason.setText(entrepreneurDto.getElectricityCostNormalSeason());
+		if(surveyDto.getElectricityCostNormalSeason() != null) {
+			electricityCostNormalSeason.setText(surveyDto.getElectricityCostNormalSeason());
 		}
 
-		if(entrepreneurDto.getElectricityCostHighSeason() != null) {
-			electricityCostHighSeason.setText(entrepreneurDto.getElectricityCostHighSeason());
+		if(surveyDto.getElectricityCostHighSeason() != null) {
+			electricityCostHighSeason.setText(surveyDto.getElectricityCostHighSeason());
 		}
 
-		if(entrepreneurDto.getTransportationCostNormalSeason() != null) {
-			transportationCostNormalSeason.setText(entrepreneurDto.getTransportationCostNormalSeason());
+		if(surveyDto.getTransportationCostNormalSeason() != null) {
+			transportationCostNormalSeason.setText(surveyDto.getTransportationCostNormalSeason());
 		}
 
-		if(entrepreneurDto.getTransportationHighSeason() != null) {
-			transportationHighSeason.setText(entrepreneurDto.getTransportationHighSeason());
+		if(surveyDto.getTransportationHighSeason() != null) {
+			transportationHighSeason.setText(surveyDto.getTransportationHighSeason());
 		}
 
-		if(entrepreneurDto.getPackagingCostNormalSeason() != null) {
-			packagingCostNormalSeason.setText(entrepreneurDto.getPackagingCostNormalSeason());
+		if(surveyDto.getPackagingCostNormalSeason() != null) {
+			packagingCostNormalSeason.setText(surveyDto.getPackagingCostNormalSeason());
 		}
 
-		if(entrepreneurDto.getPackagingCostHighSeason() != null) {
-			packagingCostHighSeason.setText(entrepreneurDto.getPackagingCostHighSeason());
+		if(surveyDto.getPackagingCostHighSeason() != null) {
+			packagingCostHighSeason.setText(surveyDto.getPackagingCostHighSeason());
 		}
 
-		if(entrepreneurDto.getFuelCostNormalSeason() != null) {
-			fuelCostNormalSeason.setText(entrepreneurDto.getFuelCostNormalSeason());
+		if(surveyDto.getFuelCostNormalSeason() != null) {
+			fuelCostNormalSeason.setText(surveyDto.getFuelCostNormalSeason());
 		}
 
-		if(entrepreneurDto.getFuelCostHighSeason() != null) {
-			fuelCostHighSeason.setText(entrepreneurDto.getFuelCostHighSeason());
+		if(surveyDto.getFuelCostHighSeason() != null) {
+			fuelCostHighSeason.setText(surveyDto.getFuelCostHighSeason());
 		}
 
-		if(entrepreneurDto.getCommissionNormalSeason() != null) {
-			commissionNormalSeason.setText(entrepreneurDto.getCommissionNormalSeason());
+		if(surveyDto.getCommissionNormalSeason() != null) {
+			commissionNormalSeason.setText(surveyDto.getCommissionNormalSeason());
 		}
 
-		if(entrepreneurDto.getCommissionHighSeason() != null) {
-			commissionHighSeason.setText(entrepreneurDto.getCommissionHighSeason());
+		if(surveyDto.getCommissionHighSeason() != null) {
+			commissionHighSeason.setText(surveyDto.getCommissionHighSeason());
 		}
 
-		if(entrepreneurDto.getWastageCostNormalSeason() != null) {
-			wastageCostNormalSeason.setText(entrepreneurDto.getWastageCostNormalSeason());
+		if(surveyDto.getWastageCostNormalSeason() != null) {
+			wastageCostNormalSeason.setText(surveyDto.getWastageCostNormalSeason());
 		}
 
-		if(entrepreneurDto.getWastageCostHighSeason() != null) {
-			wastageCostHighSeason.setText(entrepreneurDto.getWastageCostHighSeason());
+		if(surveyDto.getWastageCostHighSeason() != null) {
+			wastageCostHighSeason.setText(surveyDto.getWastageCostHighSeason());
 		}
 
-		if(entrepreneurDto.getWagesPaidNormalSeason() != null) {
-			wagesPaidNormalSeason.setText(entrepreneurDto.getWagesPaidNormalSeason());
+		if(surveyDto.getWagesPaidNormalSeason() != null) {
+			wagesPaidNormalSeason.setText(surveyDto.getWagesPaidNormalSeason());
 		}
 
-		if(entrepreneurDto.getWagesPaidHighSeason() != null) {
-			wagesPaidHighSeason.setText(entrepreneurDto.getWagesPaidHighSeason());
+		if(surveyDto.getWagesPaidHighSeason() != null) {
+			wagesPaidHighSeason.setText(surveyDto.getWagesPaidHighSeason());
 		}
 
-		if(entrepreneurDto.getPromotionCostNormalSeason() != null) {
-			promotionCostNormalSeason.setText(entrepreneurDto.getPromotionCostNormalSeason());
+		if(surveyDto.getPromotionCostNormalSeason() != null) {
+			promotionCostNormalSeason.setText(surveyDto.getPromotionCostNormalSeason());
 		}
 
-		if(entrepreneurDto.getPromotionCostHighSeason() != null) {
-			promotionCostHighSeason.setText(entrepreneurDto.getPromotionCostHighSeason());
+		if(surveyDto.getPromotionCostHighSeason() != null) {
+			promotionCostHighSeason.setText(surveyDto.getPromotionCostHighSeason());
 		}
 
-		if(entrepreneurDto.getCommunicationCostNormalSeason() != null) {
-			communicationCostNormalSeason.setText(entrepreneurDto.getCommunicationCostNormalSeason());
+		if(surveyDto.getCommunicationCostNormalSeason() != null) {
+			communicationCostNormalSeason.setText(surveyDto.getCommunicationCostNormalSeason());
 		}
 
-		if(entrepreneurDto.getCommunicationCostHighSeason() != null) {
-			communicationCostHighSeason.setText(entrepreneurDto.getCommunicationCostHighSeason());
+		if(surveyDto.getCommunicationCostHighSeason() != null) {
+			communicationCostHighSeason.setText(surveyDto.getCommunicationCostHighSeason());
 		}
 
-		if(entrepreneurDto.getMachineRepairCostNormalSeason() != null) {
-			machineRepairCostNormalSeason.setText(entrepreneurDto.getMachineRepairCostNormalSeason());
+		if(surveyDto.getMachineRepairCostNormalSeason() != null) {
+			machineRepairCostNormalSeason.setText(surveyDto.getMachineRepairCostNormalSeason());
 		}
 
-		if(entrepreneurDto.getMachineRepairCostHighSeason() != null) {
-			machineRepairCostHighSeason.setText(entrepreneurDto.getMachineRepairCostHighSeason());
+		if(surveyDto.getMachineRepairCostHighSeason() != null) {
+			machineRepairCostHighSeason.setText(surveyDto.getMachineRepairCostHighSeason());
 		}
 
-		if(entrepreneurDto.getOtherCostNormalSeason() != null) {
-			otherCostNormalSeason.setText(entrepreneurDto.getOtherCostNormalSeason());
+		if(surveyDto.getOtherCostNormalSeason() != null) {
+			otherCostNormalSeason.setText(surveyDto.getOtherCostNormalSeason());
 		}
 
-		if(entrepreneurDto.getOtherCostHighSeason() != null) {
-			otherCostHighSeason.setText(entrepreneurDto.getOtherCostHighSeason());
+		if(surveyDto.getOtherCostHighSeason() != null) {
+			otherCostHighSeason.setText(surveyDto.getOtherCostHighSeason());
 		}
 	}
 
@@ -317,7 +316,7 @@ public class IncomeDetailsActivity extends AppCompatActivity {
 			public void onClick(View v) {
 				buildEntrepreneurDto();
 				Intent intent = new Intent(getApplicationContext(), EntrepreneurActivity.class);
-				intent.putExtra(MainActivity.ENTREPRENEUR_DTO, entrepreneurDto);
+				intent.putExtra(MainActivity.ENTREPRENEUR_DTO, surveyDto);
 				startActivity(intent);
 			}
 		});
@@ -332,7 +331,7 @@ public class IncomeDetailsActivity extends AppCompatActivity {
 				buildEntrepreneurDto();
 
 				Intent intent = new Intent(getApplicationContext(), CapitalDetailActivity.class);
-				intent.putExtra(MainActivity.ENTREPRENEUR_DTO, entrepreneurDto);
+				intent.putExtra(MainActivity.ENTREPRENEUR_DTO, surveyDto);
 				startActivity(intent);
 			}
 		});
@@ -341,165 +340,165 @@ public class IncomeDetailsActivity extends AppCompatActivity {
 
 	public void buildEntrepreneurDto() {
 		if(noOfMonthsNormalSeason.getText() != null) {
-			entrepreneurDto.setNoOfMonthsNormalSeason(noOfMonthsNormalSeason.getText().toString());
+			surveyDto.setNoOfMonthsNormalSeason(noOfMonthsNormalSeason.getText().toString());
 		}
 
 		if(noOfMonthsHighSeason.getText() != null) {
-			entrepreneurDto.setNoOfMonthsHighSeason(noOfMonthsHighSeason.getText().toString());
+			surveyDto.setNoOfMonthsHighSeason(noOfMonthsHighSeason.getText().toString());
 		}
 
 		if(totalSalesCreditNormalSeason.getText() != null) {
-			entrepreneurDto.setTotalSalesCreditNormalSeason(totalSalesCreditNormalSeason.getText().toString());
+			surveyDto.setTotalSalesCreditNormalSeason(totalSalesCreditNormalSeason.getText().toString());
 		}
 
 		if(totalSalesCreditHighSeason.getText() != null) {
-			entrepreneurDto.setTotalSalesCreditHighSeason(totalSalesCreditHighSeason.getText().toString());
+			surveyDto.setTotalSalesCreditHighSeason(totalSalesCreditHighSeason.getText().toString());
 		}
 
 		if(totalSalesCashNormalSeason.getText() != null) {
-			entrepreneurDto.setTotalSalesCashNormalSeason(totalSalesCashNormalSeason.getText().toString());
+			surveyDto.setTotalSalesCashNormalSeason(totalSalesCashNormalSeason.getText().toString());
 		}
 
 		if(totalSalesCashHighSeason.getText() != null) {
-			entrepreneurDto.setTotalSalesCashHighSeason(totalSalesCashHighSeason.getText().toString());
+			surveyDto.setTotalSalesCashHighSeason(totalSalesCashHighSeason.getText().toString());
 		}
 
 		if(costRawMaterialCashNormalSeason.getText() != null) {
-			entrepreneurDto.setCostRawMaterialCashNormalSeason(costRawMaterialCashNormalSeason.getText().toString());
+			surveyDto.setCostRawMaterialCashNormalSeason(costRawMaterialCashNormalSeason.getText().toString());
 		}
 
 		if(costRawMaterialCashHighSeason.getText() != null) {
-			entrepreneurDto.setCostRawMaterialCashHighSeason(costRawMaterialCashHighSeason.getText().toString());
+			surveyDto.setCostRawMaterialCashHighSeason(costRawMaterialCashHighSeason.getText().toString());
 		}
 
 		if(costRawMaterialCreditNormalSeason.getText() != null) {
-			entrepreneurDto.setCostRawMaterialCreditNormalSeason(costRawMaterialCreditNormalSeason.getText().toString());
+			surveyDto.setCostRawMaterialCreditNormalSeason(costRawMaterialCreditNormalSeason.getText().toString());
 		}
 
 		if(costRawMaterialCreditHighSeason.getText() != null) {
-			entrepreneurDto.setCostRawMaterialCreditHighSeason(costRawMaterialCreditHighSeason.getText().toString());
+			surveyDto.setCostRawMaterialCreditHighSeason(costRawMaterialCreditHighSeason.getText().toString());
 		}
 
 		if(purchaseFrequencyNormalSeason.getText() != null) {
-			entrepreneurDto.setPurchaseFrequencyNormalSeason(purchaseFrequencyNormalSeason.getText().toString());
+			surveyDto.setPurchaseFrequencyNormalSeason(purchaseFrequencyNormalSeason.getText().toString());
 		}
 
 		if(purchaseFrequencyHighSeason.getText() != null) {
-			entrepreneurDto.setPurchaseFrequencyHighSeason(purchaseFrequencyHighSeason.getText().toString());
+			surveyDto.setPurchaseFrequencyHighSeason(purchaseFrequencyHighSeason.getText().toString());
 		}
 
 		if(wagesWithdrawnNormalSeason.getText() != null) {
-			entrepreneurDto.setWagesWithdrawnNormalSeason(wagesWithdrawnNormalSeason.getText().toString());
+			surveyDto.setWagesWithdrawnNormalSeason(wagesWithdrawnNormalSeason.getText().toString());
 		}
 
 		if(wagesWithdrawnHighSeason.getText() != null) {
-			entrepreneurDto.setWagesWithdrawnHighSeason(wagesWithdrawnHighSeason.getText().toString());
+			surveyDto.setWagesWithdrawnHighSeason(wagesWithdrawnHighSeason.getText().toString());
 		}
 
 		if(rentNormalSeason.getText() != null) {
-			entrepreneurDto.setRentNormalSeason(rentNormalSeason.getText().toString());
+			surveyDto.setRentNormalSeason(rentNormalSeason.getText().toString());
 		}
 
 		if(rentHighSeason.getText() != null) {
-			entrepreneurDto.setRentHighSeason(rentHighSeason.getText().toString());
+			surveyDto.setRentHighSeason(rentHighSeason.getText().toString());
 		}
 
 		if(electricityCostNormalSeason.getText() != null) {
-			entrepreneurDto.setElectricityCostNormalSeason(electricityCostNormalSeason.getText().toString());
+			surveyDto.setElectricityCostNormalSeason(electricityCostNormalSeason.getText().toString());
 		}
 
 		if(electricityCostHighSeason.getText() != null) {
-			entrepreneurDto.setElectricityCostHighSeason(electricityCostHighSeason.getText().toString());
+			surveyDto.setElectricityCostHighSeason(electricityCostHighSeason.getText().toString());
 		}
 
 		if(transportationCostNormalSeason.getText() != null) {
-			entrepreneurDto.setTransportationCostNormalSeason(transportationCostNormalSeason.getText().toString());
+			surveyDto.setTransportationCostNormalSeason(transportationCostNormalSeason.getText().toString());
 		}
 
 		if(transportationHighSeason.getText() != null) {
-			entrepreneurDto.setTransportationHighSeason(transportationHighSeason.getText().toString());
+			surveyDto.setTransportationHighSeason(transportationHighSeason.getText().toString());
 		}
 
 		if(packagingCostNormalSeason.getText() != null) {
-			entrepreneurDto.setPackagingCostNormalSeason(packagingCostNormalSeason.getText().toString());
+			surveyDto.setPackagingCostNormalSeason(packagingCostNormalSeason.getText().toString());
 		}
 
 		if(packagingCostHighSeason.getText() != null) {
-			entrepreneurDto.setPackagingCostHighSeason(packagingCostHighSeason.getText().toString());
+			surveyDto.setPackagingCostHighSeason(packagingCostHighSeason.getText().toString());
 		}
 
 		if(fuelCostNormalSeason.getText() != null) {
-			entrepreneurDto.setFuelCostNormalSeason(fuelCostNormalSeason.getText().toString());
+			surveyDto.setFuelCostNormalSeason(fuelCostNormalSeason.getText().toString());
 		}
 
 		if(fuelCostHighSeason.getText() != null) {
-			entrepreneurDto.setFuelCostHighSeason(fuelCostHighSeason.getText().toString());
+			surveyDto.setFuelCostHighSeason(fuelCostHighSeason.getText().toString());
 		}
 
 		if(commissionNormalSeason.getText() != null) {
-			entrepreneurDto.setCommissionNormalSeason(commissionNormalSeason.getText().toString());
+			surveyDto.setCommissionNormalSeason(commissionNormalSeason.getText().toString());
 		}
 
 		if(commissionHighSeason.getText() != null) {
-			entrepreneurDto.setCommissionHighSeason(commissionHighSeason.getText().toString());
+			surveyDto.setCommissionHighSeason(commissionHighSeason.getText().toString());
 		}
 
 		if(wastageCostNormalSeason.getText() != null) {
-			entrepreneurDto.setWastageCostNormalSeason(wastageCostNormalSeason.getText().toString());
+			surveyDto.setWastageCostNormalSeason(wastageCostNormalSeason.getText().toString());
 		}
 
 		if(wastageCostHighSeason.getText() != null) {
-			entrepreneurDto.setWastageCostHighSeason(wastageCostHighSeason.getText().toString());
+			surveyDto.setWastageCostHighSeason(wastageCostHighSeason.getText().toString());
 		}
 
 		if(wagesPaidNormalSeason.getText() != null) {
-			entrepreneurDto.setWagesPaidNormalSeason(wagesPaidNormalSeason.getText().toString());
+			surveyDto.setWagesPaidNormalSeason(wagesPaidNormalSeason.getText().toString());
 		}
 
 		if(wagesPaidHighSeason.getText() != null) {
-			entrepreneurDto.setWagesPaidHighSeason(wagesPaidHighSeason.getText().toString());
+			surveyDto.setWagesPaidHighSeason(wagesPaidHighSeason.getText().toString());
 		}
 
 		if(promotionCostNormalSeason.getText() != null) {
-			entrepreneurDto.setPromotionCostNormalSeason(promotionCostNormalSeason.getText().toString());
+			surveyDto.setPromotionCostNormalSeason(promotionCostNormalSeason.getText().toString());
 		}
 
 		if(promotionCostHighSeason.getText() != null) {
-			entrepreneurDto.setPromotionCostHighSeason(promotionCostHighSeason.getText().toString());
+			surveyDto.setPromotionCostHighSeason(promotionCostHighSeason.getText().toString());
 		}
 
 		if(communicationCostNormalSeason.getText() != null) {
-			entrepreneurDto.setCommunicationCostNormalSeason(communicationCostNormalSeason.getText().toString());
+			surveyDto.setCommunicationCostNormalSeason(communicationCostNormalSeason.getText().toString());
 		}
 
 		if(communicationCostHighSeason.getText() != null) {
-			entrepreneurDto.setCommunicationCostHighSeason(communicationCostHighSeason.getText().toString());
+			surveyDto.setCommunicationCostHighSeason(communicationCostHighSeason.getText().toString());
 		}
 
 		if(machineRepairCostNormalSeason.getText() != null) {
-			entrepreneurDto.setMachineRepairCostNormalSeason(machineRepairCostNormalSeason.getText().toString());
+			surveyDto.setMachineRepairCostNormalSeason(machineRepairCostNormalSeason.getText().toString());
 		}
 
 		if(machineRepairCostHighSeason.getText() != null) {
-			entrepreneurDto.setMachineRepairCostHighSeason(machineRepairCostHighSeason.getText().toString());
+			surveyDto.setMachineRepairCostHighSeason(machineRepairCostHighSeason.getText().toString());
 		}
 
 		if(otherCostNormalSeason.getText() != null) {
-			entrepreneurDto.setOtherCostNormalSeason(otherCostNormalSeason.getText().toString());
+			surveyDto.setOtherCostNormalSeason(otherCostNormalSeason.getText().toString());
 		}
 
 		if(otherCostHighSeason.getText() != null) {
-			entrepreneurDto.setOtherCostHighSeason(otherCostHighSeason.getText().toString());
+			surveyDto.setOtherCostHighSeason(otherCostHighSeason.getText().toString());
 		}
 
 
 	}
 
-	public EntrepreneurDto getEntrepreneurDto() {
-		return entrepreneurDto;
+	public SurveyDto getSurveyDto() {
+		return surveyDto;
 	}
 
-	public void setEntrepreneurDto(EntrepreneurDto entrepreneurDto) {
-		this.entrepreneurDto = entrepreneurDto;
+	public void setSurveyDto(SurveyDto surveyDto) {
+		this.surveyDto = surveyDto;
 	}
 }

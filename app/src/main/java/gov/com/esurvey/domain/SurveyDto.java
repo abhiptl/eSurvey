@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Abhishek on 3/14/2017.
  */
-public class EntrepreneurDto implements Serializable {
+public class SurveyDto implements Serializable {
 
 
 	/* Entrepreneur details */
@@ -767,7 +767,7 @@ public class EntrepreneurDto implements Serializable {
 
 	@Override
 	public String toString() {
-		return "EntrepreneurDto{" + "state='" + state + '\'' + ", district='" + district + '\'' + ", block='" + block + '\'' + ", village='"
+		return "SurveyDto{" + "state='" + state + '\'' + ", district='" + district + '\'' + ", block='" + block + '\'' + ", village='"
 				+ village + '\'' + ", name='" + name + '\'' + ", phoneNumber='" + phoneNumber + '\'' + ", startYearOfBusiness='"
 				+ startYearOfBusiness + '\'' + ", roadType='" + roadType + '\'' + ", marketType='" + marketType + '\'' + ", shopType='"
 				+ shopType + '\'' + ", businessSize='" + businessSize + '\'' + ", religion='" + religion + '\'' + ", caste='" + caste + '\''
