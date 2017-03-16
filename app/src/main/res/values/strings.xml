@@ -44,4 +44,17 @@
     <string name="saletrend_medium">Medium</string>
     <string name="saletrend_high">High</string>
 
+    <string name="salemonth_january">January</string>
+    <string name="salemonth_february">February</string>
+    <string name="salemonth_march">March</string>
+    <string name="salemonth_april">April</string>
+    <string name="salemonth_may">May</string>
+    <string name="salemonth_june">June</string>
+    <string name="salemonth_july">July</string>
+    <string name="salemonth_august">August</string>
+    <string name="salemonth_september">September</string>
+    <string name="salemonth_october">October</string>
+    <string name="salemonth_november">November</string>
+    <string name="salemonth_december">December</string>
+
 </resources>

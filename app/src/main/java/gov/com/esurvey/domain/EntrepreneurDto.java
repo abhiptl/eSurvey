@@ -9,6 +9,8 @@ import java.util.List;
 public class EntrepreneurDto implements Serializable {
 
 
+	/* Entrepreneur details */
+
 	private String state;
 	private String district;
 	private String block;
@@ -28,6 +30,7 @@ public class EntrepreneurDto implements Serializable {
 	private List<String> businessTypes;
 	private String competitorCount;
 
+	/* Income details */
 	private String noOfMonthsNormalSeason;
 	private String noOfMonthsHighSeason;
 
@@ -103,6 +106,24 @@ public class EntrepreneurDto implements Serializable {
 	private String familyMembersInvolvedMonths;
 	private String externalLabourersInvolved;
 	private String externalLabourersInvolvedMonths;
+
+	/* Monthly sale trends*/
+	private String monthlySaleTrendJanuary;
+	private String monthlySaleTrendFebruary;
+	private String monthlySaleTrendMarch;
+	private String monthlySaleTrendApril;
+	private String monthlySaleTrendMay;
+	private String monthlySaleTrendJune;
+	private String monthlySaleTrendJuly;
+	private String monthlySaleTrendAugust;
+	private String monthlySaleTrendSeptember;
+	private String monthlySaleTrendOctober;
+	private String monthlySaleTrendNovember;
+	private String monthlySaleTrendDecember;
+
+
+	private String saleToExternalCustomer;
+	private String purchaseByEntrepreneur;
 
 	public String getState() {
 		return state;
@@ -630,5 +651,165 @@ public class EntrepreneurDto implements Serializable {
 
 	public void setExternalLabourersInvolvedMonths(String externalLabourersInvolvedMonths) {
 		this.externalLabourersInvolvedMonths = externalLabourersInvolvedMonths;
+	}
+
+	public String getMonthlySaleTrendJanuary() {
+		return monthlySaleTrendJanuary;
+	}
+
+	public void setMonthlySaleTrendJanuary(String monthlySaleTrendJanuary) {
+		this.monthlySaleTrendJanuary = monthlySaleTrendJanuary;
+	}
+
+	public String getMonthlySaleTrendFebruary() {
+		return monthlySaleTrendFebruary;
+	}
+
+	public void setMonthlySaleTrendFebruary(String monthlySaleTrendFebruary) {
+		this.monthlySaleTrendFebruary = monthlySaleTrendFebruary;
+	}
+
+	public String getMonthlySaleTrendMarch() {
+		return monthlySaleTrendMarch;
+	}
+
+	public void setMonthlySaleTrendMarch(String monthlySaleTrendMarch) {
+		this.monthlySaleTrendMarch = monthlySaleTrendMarch;
+	}
+
+	public String getMonthlySaleTrendApril() {
+		return monthlySaleTrendApril;
+	}
+
+	public void setMonthlySaleTrendApril(String monthlySaleTrendApril) {
+		this.monthlySaleTrendApril = monthlySaleTrendApril;
+	}
+
+	public String getMonthlySaleTrendMay() {
+		return monthlySaleTrendMay;
+	}
+
+	public void setMonthlySaleTrendMay(String monthlySaleTrendMay) {
+		this.monthlySaleTrendMay = monthlySaleTrendMay;
+	}
+
+	public String getMonthlySaleTrendJune() {
+		return monthlySaleTrendJune;
+	}
+
+	public void setMonthlySaleTrendJune(String monthlySaleTrendJune) {
+		this.monthlySaleTrendJune = monthlySaleTrendJune;
+	}
+
+	public String getMonthlySaleTrendJuly() {
+		return monthlySaleTrendJuly;
+	}
+
+	public void setMonthlySaleTrendJuly(String monthlySaleTrendJuly) {
+		this.monthlySaleTrendJuly = monthlySaleTrendJuly;
+	}
+
+	public String getMonthlySaleTrendAugust() {
+		return monthlySaleTrendAugust;
+	}
+
+	public void setMonthlySaleTrendAugust(String monthlySaleTrendAugust) {
+		this.monthlySaleTrendAugust = monthlySaleTrendAugust;
+	}
+
+	public String getMonthlySaleTrendSeptember() {
+		return monthlySaleTrendSeptember;
+	}
+
+	public void setMonthlySaleTrendSeptember(String monthlySaleTrendSeptember) {
+		this.monthlySaleTrendSeptember = monthlySaleTrendSeptember;
+	}
+
+	public String getMonthlySaleTrendOctober() {
+		return monthlySaleTrendOctober;
+	}
+
+	public void setMonthlySaleTrendOctober(String monthlySaleTrendOctober) {
+		this.monthlySaleTrendOctober = monthlySaleTrendOctober;
+	}
+
+	public String getMonthlySaleTrendNovember() {
+		return monthlySaleTrendNovember;
+	}
+
+	public void setMonthlySaleTrendNovember(String monthlySaleTrendNovember) {
+		this.monthlySaleTrendNovember = monthlySaleTrendNovember;
+	}
+
+	public String getMonthlySaleTrendDecember() {
+		return monthlySaleTrendDecember;
+	}
+
+	public void setMonthlySaleTrendDecember(String monthlySaleTrendDecember) {
+		this.monthlySaleTrendDecember = monthlySaleTrendDecember;
+	}
+
+	public String getSaleToExternalCustomer() {
+		return saleToExternalCustomer;
+	}
+
+	public void setSaleToExternalCustomer(String saleToExternalCustomer) {
+		this.saleToExternalCustomer = saleToExternalCustomer;
+	}
+
+	public String getPurchaseByEntrepreneur() {
+		return purchaseByEntrepreneur;
+	}
+
+	public void setPurchaseByEntrepreneur(String purchaseByEntrepreneur) {
+		this.purchaseByEntrepreneur = purchaseByEntrepreneur;
+	}
+
+	@Override
+	public String toString() {
+		return "EntrepreneurDto{" + "state='" + state + '\'' + ", district='" + district + '\'' + ", block='" + block + '\'' + ", village='"
+				+ village + '\'' + ", name='" + name + '\'' + ", phoneNumber='" + phoneNumber + '\'' + ", startYearOfBusiness='"
+				+ startYearOfBusiness + '\'' + ", roadType='" + roadType + '\'' + ", marketType='" + marketType + '\'' + ", shopType='"
+				+ shopType + '\'' + ", businessSize='" + businessSize + '\'' + ", religion='" + religion + '\'' + ", caste='" + caste + '\''
+				+ ", businessTypes=" + businessTypes + ", competitorCount='" + competitorCount + '\'' + ", noOfMonthsNormalSeason='"
+				+ noOfMonthsNormalSeason + '\'' + ", noOfMonthsHighSeason='" + noOfMonthsHighSeason + '\''
+				+ ", totalSalesCreditNormalSeason='" + totalSalesCreditNormalSeason + '\'' + ", totalSalesCreditHighSeason='"
+				+ totalSalesCreditHighSeason + '\'' + ", totalSalesCashNormalSeason='" + totalSalesCashNormalSeason + '\''
+				+ ", totalSalesCashHighSeason='" + totalSalesCashHighSeason + '\'' + ", costRawMaterialCashNormalSeason='"
+				+ costRawMaterialCashNormalSeason + '\'' + ", costRawMaterialCashHighSeason='" + costRawMaterialCashHighSeason + '\''
+				+ ", costRawMaterialCreditNormalSeason='" + costRawMaterialCreditNormalSeason + '\'' + ", costRawMaterialCreditHighSeason='"
+				+ costRawMaterialCreditHighSeason + '\'' + ", purchaseFrequencyNormalSeason='" + purchaseFrequencyNormalSeason + '\''
+				+ ", purchaseFrequencyHighSeason='" + purchaseFrequencyHighSeason + '\'' + ", wagesWithdrawnNormalSeason='"
+				+ wagesWithdrawnNormalSeason + '\'' + ", wagesWithdrawnHighSeason='" + wagesWithdrawnHighSeason + '\''
+				+ ", rentNormalSeason='" + rentNormalSeason + '\'' + ", rentHighSeason='" + rentHighSeason + '\''
+				+ ", electricityCostNormalSeason='" + electricityCostNormalSeason + '\'' + ", electricityCostHighSeason='"
+				+ electricityCostHighSeason + '\'' + ", transportationCostNormalSeason='" + transportationCostNormalSeason + '\''
+				+ ", transportationHighSeason='" + transportationHighSeason + '\'' + ", packagingCostNormalSeason='"
+				+ packagingCostNormalSeason + '\'' + ", packagingCostHighSeason='" + packagingCostHighSeason + '\''
+				+ ", fuelCostNormalSeason='" + fuelCostNormalSeason + '\'' + ", fuelCostHighSeason='" + fuelCostHighSeason + '\''
+				+ ", commissionNormalSeason='" + commissionNormalSeason + '\'' + ", commissionHighSeason='" + commissionHighSeason + '\''
+				+ ", wastageCostNormalSeason='" + wastageCostNormalSeason + '\'' + ", wastageCostHighSeason='" + wastageCostHighSeason
+				+ '\'' + ", wagesPaidNormalSeason='" + wagesPaidNormalSeason + '\'' + ", wagesPaidHighSeason='" + wagesPaidHighSeason + '\''
+				+ ", promotionCostNormalSeason='" + promotionCostNormalSeason + '\'' + ", promotionCostHighSeason='"
+				+ promotionCostHighSeason + '\'' + ", communicationCostNormalSeason='" + communicationCostNormalSeason + '\''
+				+ ", communicationCostHighSeason='" + communicationCostHighSeason + '\'' + ", machineRepairCostNormalSeason='"
+				+ machineRepairCostNormalSeason + '\'' + ", machineRepairCostHighSeason='" + machineRepairCostHighSeason + '\''
+				+ ", otherCostNormalSeason='" + otherCostNormalSeason + '\'' + ", otherCostHighSeason='" + otherCostHighSeason + '\''
+				+ ", amountReceivedFromCustomer='" + amountReceivedFromCustomer + '\'' + ", amountPaidToSupplied='" + amountPaidToSupplied
+				+ '\'' + ", amountInvestedInStart='" + amountInvestedInStart + '\'' + ", amountInvestedAfterStart='"
+				+ amountInvestedAfterStart + '\'' + ", operationMonthsInYear='" + operationMonthsInYear + '\'' + ", operationDaysPerWeek='"
+				+ operationDaysPerWeek + '\'' + ", operationHoursPerWeek='" + operationHoursPerWeek + '\'' + ", entrepreneurInvolved='"
+				+ entrepreneurInvolved + '\'' + ", entrepreneurInvolvedMonths='" + entrepreneurInvolvedMonths + '\''
+				+ ", familyMembersInvolved='" + familyMembersInvolved + '\'' + ", familyMembersInvolvedMonths='"
+				+ familyMembersInvolvedMonths + '\'' + ", externalLabourersInvolved='" + externalLabourersInvolved + '\''
+				+ ", externalLabourersInvolvedMonths='" + externalLabourersInvolvedMonths + '\'' + ", monthlySaleTrendJanuary='"
+				+ monthlySaleTrendJanuary + '\'' + ", monthlySaleTrendFebruary='" + monthlySaleTrendFebruary + '\''
+				+ ", monthlySaleTrendMarch='" + monthlySaleTrendMarch + '\'' + ", monthlySaleTrendApril='" + monthlySaleTrendApril + '\''
+				+ ", monthlySaleTrendMay='" + monthlySaleTrendMay + '\'' + ", monthlySaleTrendJune='" + monthlySaleTrendJune + '\''
+				+ ", monthlySaleTrendJuly='" + monthlySaleTrendJuly + '\'' + ", monthlySaleTrendAugust='" + monthlySaleTrendAugust + '\''
+				+ ", monthlySaleTrendSeptember='" + monthlySaleTrendSeptember + '\'' + ", monthlySaleTrendOctober='"
+				+ monthlySaleTrendOctober + '\'' + ", monthlySaleTrendNovember='" + monthlySaleTrendNovember + '\''
+				+ ", monthlySaleTrendDecember='" + monthlySaleTrendDecember + '\'' + ", saleToExternalCustomer='" + saleToExternalCustomer
+				+ '\'' + ", purchaseByEntrepreneur='" + purchaseByEntrepreneur + '\'' + '}';
 	}
 }

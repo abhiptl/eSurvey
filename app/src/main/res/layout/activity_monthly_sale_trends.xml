@@ -27,7 +27,7 @@
 
 
             <TextView
-                    android:text="January" android:textStyle="bold" android:textSize="20dp"
+                    android:text="@string/salemonth_january" android:textStyle="bold" android:textSize="20dp"
                     android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="start"
             />
 
@@ -47,12 +47,12 @@
 
 
             <TextView
-                    android:text="February" android:textStyle="bold" android:textSize="20dp"
+                    android:text="@string/salemonth_february" android:textStyle="bold" android:textSize="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:layout_gravity="start"/>
 
             <RadioGroup android:id="@+id/radioGroupFebruary" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_gravity="center" android:orientation="horizontal" >
+                        android:layout_gravity="center" android:orientation="horizontal">
                 <RadioButton android:id="@+id/radioButtonFebruaryLow" android:layout_width="wrap_content"
                              android:layout_height="wrap_content"
                              android:text="@string/saletrend_low"/>
@@ -66,7 +66,7 @@
 
 
             <TextView
-                    android:text="March" android:textStyle="bold" android:textSize="20dp"
+                    android:text="@string/salemonth_march" android:textStyle="bold" android:textSize="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:layout_gravity="start"/>
 
@@ -85,7 +85,7 @@
             </RadioGroup>
 
             <TextView
-                    android:text="April" android:textStyle="bold" android:textSize="20dp"
+                    android:text="@string/salemonth_april" android:textStyle="bold" android:textSize="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:layout_gravity="start"/>
 
@@ -104,7 +104,7 @@
             </RadioGroup>
 
             <TextView
-                    android:text="May" android:textStyle="bold" android:textSize="20dp"
+                    android:text="@string/salemonth_may" android:textStyle="bold" android:textSize="20dp"
                     android:layout_width="wrap_content" android:layout_gravity="start"
 
                     android:layout_height="wrap_content"/>
@@ -124,7 +124,7 @@
             </RadioGroup>
 
             <TextView
-                    android:text="June" android:textStyle="bold" android:textSize="20dp"
+                    android:text="@string/salemonth_june" android:textStyle="bold" android:textSize="20dp"
                     android:layout_width="wrap_content" android:layout_gravity="start"
                     android:layout_height="wrap_content" android:layout_weight="1"/>
 
@@ -142,7 +142,7 @@
             </RadioGroup>
 
             <TextView
-                    android:text="July" android:textStyle="bold" android:textSize="20dp"
+                    android:text="@string/salemonth_july" android:textStyle="bold" android:textSize="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:layout_gravity="start"/>
 
@@ -160,7 +160,7 @@
             </RadioGroup>
 
             <TextView
-                    android:text="August" android:textStyle="bold" android:textSize="20dp"
+                    android:text="@string/salemonth_august" android:textStyle="bold" android:textSize="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:layout_gravity="start"/>
 
@@ -178,7 +178,7 @@
             </RadioGroup>
 
             <TextView
-                    android:text="September" android:textStyle="bold" android:textSize="20dp"
+                    android:text="@string/salemonth_september" android:textStyle="bold" android:textSize="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:layout_gravity="start"/>
 
@@ -196,7 +196,7 @@
             </RadioGroup>
 
             <TextView
-                    android:text="October" android:textStyle="bold" android:textSize="20dp"
+                    android:text="@string/salemonth_october" android:textStyle="bold" android:textSize="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:layout_gravity="start"/>
 
@@ -214,7 +214,7 @@
             </RadioGroup>
 
             <TextView
-                    android:text="November" android:textStyle="bold" android:textSize="20dp"
+                    android:text="@string/salemonth_november" android:textStyle="bold" android:textSize="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:layout_gravity="start"/>
 
@@ -232,7 +232,7 @@
             </RadioGroup>
 
             <TextView
-                    android:text="December" android:textStyle="bold" android:textSize="20dp"
+                    android:text="@string/salemonth_december" android:textStyle="bold" android:textSize="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:layout_gravity="start"/>
 
@@ -264,10 +264,11 @@
                     android:textStyle="bold"
                     android:textSize="20dp"/>
 
-            <EditText android:id="@+id/eTextSalesToExternal" android:layout_width="match_parent" android:layout_height="wrap_content"
+            <EditText android:id="@+id/eTextSalesToExternal" android:inputType="numberDecimal" android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
                       android:hint="Sales to external (outside the village) customers"/>
 
-            <EditText android:id="@+id/eTextPurchaseEntrepreneur" android:layout_width="match_parent"
+            <EditText android:id="@+id/eTextPurchaseEntrepreneur" android:inputType="numberDecimal" android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:hint="Purchases by entrepreneur from within block/ mandal"/>
 
@@ -280,13 +281,13 @@
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal"
                           android:weightSum="2">
 
-                <Button android:id="@+id/buttonBackCapitalDetails" android:layout_width="match_parent" android:layout_height="wrap_content"
+                <Button android:id="@+id/buttonBackMonthlySales" android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:text="Back" android:textColor="@color/colorWhite" android:background="@color/colorPrimary"
                         android:textStyle="bold" android:layout_marginRight="10dp"
                         android:textSize="20dp" android:layout_weight="1"/>
 
 
-                <Button android:id="@+id/buttonNextCapitalDetails" android:layout_width="match_parent" android:layout_height="wrap_content"
+                <Button android:id="@+id/buttonSubmitMonthlySales" android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:text="Submit" android:paddingLeft="10dp" android:textColor="@color/colorWhite"
                         android:background="@color/colorPrimary"
                         android:textStyle="bold"
