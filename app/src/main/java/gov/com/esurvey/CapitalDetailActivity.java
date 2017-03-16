@@ -171,7 +171,7 @@ public class CapitalDetailActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				buildEntrepreneurDto();
-				Intent intent = new Intent(getApplicationContext(), CapitalDetailActivity.class);
+				Intent intent = new Intent(getApplicationContext(), IncomeDetailsActivity.class);
 				intent.putExtra(MainActivity.ENTREPRENEUR_DTO, entrepreneurDto);
 				startActivity(intent);
 			}
