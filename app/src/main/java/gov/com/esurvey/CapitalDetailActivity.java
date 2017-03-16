@@ -186,9 +186,9 @@ public class CapitalDetailActivity extends AppCompatActivity {
 			public void onClick(View v) {
 				buildEntrepreneurDto();
 
-				/*Intent intent = new Intent(getApplicationContext(), CapitalDetailActivity.class);
+				Intent intent = new Intent(getApplicationContext(), MonthlySaleTrendsActivity.class);
 				intent.putExtra(MainActivity.ENTREPRENEUR_DTO, entrepreneurDto);
-				startActivity(intent);*/
+				startActivity(intent);
 			}
 		});
 	}
