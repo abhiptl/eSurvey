@@ -264,26 +264,13 @@
                     android:textStyle="bold"
                     android:textSize="20dp"/>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:weightSum="2">
-                <TextView
-                        android:text="Sales to external (outside the village) customers"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:layout_weight="1"/>
+            <EditText android:id="@+id/eTextSalesToExternal" android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:hint="Sales to external (outside the village) customers"/>
 
-                <EditText android:id="@+id/eTextSalesToExternal" android:layout_width="match_parent" android:layout_height="wrap_content"
-                          android:layout_weight="1"/>
-            </LinearLayout>
+            <EditText android:id="@+id/eTextPurchaseEntrepreneur" android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:hint="Purchases by entrepreneur from within block/ mandal"/>
 
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:weightSum="2">
-                <TextView
-                        android:text="Purchases by entrepreneur from within block/ mandal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:layout_weight="1"/>
-
-                <EditText android:id="@+id/eTextPurchaseEntrepreneur" android:layout_width="match_parent"
-                          android:layout_height="wrap_content"
-                          android:layout_weight="1"/>
-            </LinearLayout>
 
             <Space
                     android:layout_width="wrap_content"
