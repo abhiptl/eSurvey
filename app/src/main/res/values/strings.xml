@@ -40,5 +40,8 @@
 
     <string name="error_required">Required</string>
 
+    <string name="saletrend_low">Low</string>
+    <string name="saletrend_medium">Medium</string>
+    <string name="saletrend_high">High</string>
 
 </resources>

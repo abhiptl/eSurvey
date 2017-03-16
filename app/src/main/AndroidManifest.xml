@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".CapitalDetailActivity">
         </activity>
+        <activity android:name=".MonthlySaleTrendsActivity">
+        </activity>
     </application>
 
 </manifest>
