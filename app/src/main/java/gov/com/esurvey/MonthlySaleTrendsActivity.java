@@ -10,13 +10,14 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-import gov.com.esurvey.domain.EntrepreneurDto;
+import gov.com.esurvey.database.SurveyDAOManager;
+import gov.com.esurvey.domain.SurveyDto;
 
 public class MonthlySaleTrendsActivity extends AppCompatActivity {
 
 	private final String TAG = MonthlySaleTrendsActivity.class.getSimpleName();
 
-	private EntrepreneurDto entrepreneurDto;
+	private SurveyDto surveyDto;
 
 	private RadioGroup radioGroupJanuary;
 	private RadioGroup radioGroupFebruary;
@@ -31,57 +32,7 @@ public class MonthlySaleTrendsActivity extends AppCompatActivity {
 	private RadioGroup radioGroupNovember;
 	private RadioGroup radioGroupDecember;
 
-	/*private RadioButton radioButtonJanuaryLow;
-	private RadioButton radioButtonJanuaryMedium;
-	private RadioButton radioButtonJanuaryHigh;
-
-	private RadioButton radioButtonFebruaryLow;
-	private RadioButton radioButtonFebruaryMedium;
-	private RadioButton radioButtonFebruaryHigh;
-
-
-	private RadioButton radioButtonMarchLow;
-	private RadioButton radioButtonMarchMedium;
-	private RadioButton radioButtonMarchHigh;
-
-
-	private RadioButton radioButtonAprilLow;
-	private RadioButton radioButtonAprilMedium;
-	private RadioButton radioButtonAprilHigh;
-
-	private RadioButton radioButtonMayLow;
-	private RadioButton radioButtonMayMedium;
-	private RadioButton radioButtonMayHigh;
-
-	private RadioButton radioButtonJuneLow;
-	private RadioButton radioButtonJuneMedium;
-	private RadioButton radioButtonJuneHigh;
-
-	private RadioButton radioButtonJulyLow;
-	private RadioButton radioButtonJulyMedium;
-	private RadioButton radioButtonJulyHigh;
-
-
-	private RadioButton radioButtonAugustLow;
-	private RadioButton radioButtonAugustMedium;
-	private RadioButton radioButtonAugustHigh;
-
-
-	private RadioButton radioButtonSeptemberLow;
-	private RadioButton radioButtonSeptemberMedium;
-	private RadioButton radioButtonSeptemberHigh;
-
-	private RadioButton radioButtonOctoberLow;
-	private RadioButton radioButtonOctoberMedium;
-	private RadioButton radioButtonOctoberHigh;
-
-	private RadioButton radioButtonNovemberLow;
-	private RadioButton radioButtonNovemberMedium;
-	private RadioButton radioButtonNovemberHigh;
-
-	private RadioButton radioButtonDecemberLow;
-	private RadioButton radioButtonDecemberMedium;
-	private RadioButton radioButtonDecemberHigh;*/
+	private SurveyDAOManager surveyDAOManager;
 
 	private EditText eTextSalesToExternal;
 	private EditText eTextPurchaseEntrepreneur;
@@ -89,23 +40,7 @@ public class MonthlySaleTrendsActivity extends AppCompatActivity {
 	private Button buttonBackMonthlySales;
 	private Button buttonSubmitMonthlySales;
 
-	/*private static String JANUARY;
-	private static String FEBRUARY;
-	private static String MARCH;
-	private static String APRIL;
-	private static String MAY;
-	private static String JUNE;
-	private static String JULY;
-	private static String AUGUST;
-	private static String SEPTEMBER;
-	private static String OCTOBER;
-	private static String NOVEMBER;
-	private static String DECEMBER;
 
-	private static String TREND_HIGH;
-	private static String TREND_MEDIUM;
-	private static String TREND_LOW;
-*/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -137,75 +72,59 @@ public class MonthlySaleTrendsActivity extends AppCompatActivity {
 		eTextSalesToExternal = (EditText) findViewById(R.id.eTextSalesToExternal);
 		eTextPurchaseEntrepreneur = (EditText) findViewById(R.id.eTextPurchaseEntrepreneur);
 
-		/*JANUARY = getResources().getString(R.string.salemonth_january);
-		FEBRUARY = getResources().getString(R.string.salemonth_february);
-		MARCH = getResources().getString(R.string.salemonth_march);
-		APRIL = getResources().getString(R.string.salemonth_april);
-		MAY = getResources().getString(R.string.salemonth_may);
-		JUNE = getResources().getString(R.string.salemonth_june);
-		JULY = getResources().getString(R.string.salemonth_july);
-		AUGUST = getResources().getString(R.string.salemonth_august);
-		SEPTEMBER = getResources().getString(R.string.salemonth_september);
-		OCTOBER = getResources().getString(R.string.salemonth_october);
-		NOVEMBER = getResources().getString(R.string.salemonth_november);
-		DECEMBER = getResources().getString(R.string.salemonth_december);
-
-		TREND_HIGH = getResources().getString(R.string.saletrend_high);
-		TREND_MEDIUM = getResources().getString(R.string.saletrend_medium);
-		TREND_LOW = getResources().getString(R.string.saletrend_low);*/
-
+		surveyDAOManager = new SurveyDAOManager(this);
 
 	}
 
 	public void initializeValues() {
-		entrepreneurDto = (EntrepreneurDto)(getIntent().getSerializableExtra(MainActivity.ENTREPRENEUR_DTO));
+		surveyDto = (SurveyDto)(getIntent().getSerializableExtra(MainActivity.ENTREPRENEUR_DTO));
 
-		if(entrepreneurDto.getMonthlySaleTrendJanuary() != null) {
-			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_january), entrepreneurDto.getMonthlySaleTrendJanuary());
+		if(surveyDto.getMonthlySaleTrendJanuary() != null) {
+			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_january), surveyDto.getMonthlySaleTrendJanuary());
 		}
 
-		if(entrepreneurDto.getMonthlySaleTrendFebruary() != null) {
-			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_february), entrepreneurDto.getMonthlySaleTrendFebruary());
+		if(surveyDto.getMonthlySaleTrendFebruary() != null) {
+			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_february), surveyDto.getMonthlySaleTrendFebruary());
 		}
 
-		if(entrepreneurDto.getMonthlySaleTrendMarch() != null) {
-			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_march), entrepreneurDto.getMonthlySaleTrendMarch());
+		if(surveyDto.getMonthlySaleTrendMarch() != null) {
+			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_march), surveyDto.getMonthlySaleTrendMarch());
 		}
 
-		if(entrepreneurDto.getMonthlySaleTrendApril() != null) {
-			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_april), entrepreneurDto.getMonthlySaleTrendApril());
+		if(surveyDto.getMonthlySaleTrendApril() != null) {
+			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_april), surveyDto.getMonthlySaleTrendApril());
 		}
 
-		if(entrepreneurDto.getMonthlySaleTrendMay() != null) {
-			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_may), entrepreneurDto.getMonthlySaleTrendMay());
+		if(surveyDto.getMonthlySaleTrendMay() != null) {
+			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_may), surveyDto.getMonthlySaleTrendMay());
 		}
 
-		if(entrepreneurDto.getMonthlySaleTrendJune() != null) {
-			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_june), entrepreneurDto.getMonthlySaleTrendJune());
+		if(surveyDto.getMonthlySaleTrendJune() != null) {
+			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_june), surveyDto.getMonthlySaleTrendJune());
 		}
 
-		if(entrepreneurDto.getMonthlySaleTrendJuly() != null) {
-			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_july), entrepreneurDto.getMonthlySaleTrendJuly());
+		if(surveyDto.getMonthlySaleTrendJuly() != null) {
+			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_july), surveyDto.getMonthlySaleTrendJuly());
 		}
 
-		if(entrepreneurDto.getMonthlySaleTrendAugust() != null) {
-			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_august), entrepreneurDto.getMonthlySaleTrendAugust());
+		if(surveyDto.getMonthlySaleTrendAugust() != null) {
+			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_august), surveyDto.getMonthlySaleTrendAugust());
 		}
 
-		if(entrepreneurDto.getMonthlySaleTrendSeptember() != null) {
-			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_september), entrepreneurDto.getMonthlySaleTrendSeptember());
+		if(surveyDto.getMonthlySaleTrendSeptember() != null) {
+			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_september), surveyDto.getMonthlySaleTrendSeptember());
 		}
 
-		if(entrepreneurDto.getMonthlySaleTrendOctober() != null) {
-			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_october), entrepreneurDto.getMonthlySaleTrendOctober());
+		if(surveyDto.getMonthlySaleTrendOctober() != null) {
+			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_october), surveyDto.getMonthlySaleTrendOctober());
 		}
 
-		if(entrepreneurDto.getMonthlySaleTrendNovember() != null) {
-			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_november), entrepreneurDto.getMonthlySaleTrendNovember());
+		if(surveyDto.getMonthlySaleTrendNovember() != null) {
+			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_november), surveyDto.getMonthlySaleTrendNovember());
 		}
 
-		if(entrepreneurDto.getMonthlySaleTrendDecember() != null) {
-			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_december), entrepreneurDto.getMonthlySaleTrendDecember());
+		if(surveyDto.getMonthlySaleTrendDecember() != null) {
+			checkMonthlyTrendRadio(getResources().getString(R.string.salemonth_december), surveyDto.getMonthlySaleTrendDecember());
 		}
 
 
@@ -357,7 +276,7 @@ public class MonthlySaleTrendsActivity extends AppCompatActivity {
 			public void onClick(View v) {
 				buildEntrepreneurDto();
 				Intent intent = new Intent(getApplicationContext(), CapitalDetailActivity.class);
-				intent.putExtra(MainActivity.ENTREPRENEUR_DTO, entrepreneurDto);
+				intent.putExtra(MainActivity.ENTREPRENEUR_DTO, surveyDto);
 				startActivity(intent);
 			}
 		});
@@ -370,92 +289,96 @@ public class MonthlySaleTrendsActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				buildEntrepreneurDto();
-				Log.i(TAG, entrepreneurDto.toString());
-				// TODO save data locally and call Main activity with Toast message
-				Toast.makeText(getApplicationContext(), "Survey has been saved. Please sync to submit", Toast
+				Log.i(TAG, surveyDto.toString());
+				long id = insertSurveyDetail();
+				Toast.makeText(getApplicationContext(), "Survey has been saved(ID="+id+"). Please sync to submit", Toast
 						.LENGTH_LONG)
 						.show();
-
 				Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-				//intent.putExtra(MainActivity.ENTREPRENEUR_DTO, entrepreneurDto);
 				startActivity(intent);
-
 			}
 		});
 
 	}
 
+	public long insertSurveyDetail() {
+		surveyDAOManager.open();
+		long insertedSurveyID = surveyDAOManager.insert(surveyDto);
+		surveyDAOManager.close();
+		return insertedSurveyID;
+	}
+
 	public void buildEntrepreneurDto() {
 		if(radioGroupJanuary.getCheckedRadioButtonId() != -1) {
 			RadioButton rgJanuary = (RadioButton) findViewById(radioGroupJanuary.getCheckedRadioButtonId());
-			entrepreneurDto.setMonthlySaleTrendJanuary(rgJanuary.getText().toString());
+			surveyDto.setMonthlySaleTrendJanuary(rgJanuary.getText().toString());
 		}
 
 		if(radioGroupFebruary.getCheckedRadioButtonId() != -1) {
 			RadioButton rgFebruary = (RadioButton) findViewById(radioGroupFebruary.getCheckedRadioButtonId());
-			entrepreneurDto.setMonthlySaleTrendFebruary(rgFebruary.getText().toString());
+			surveyDto.setMonthlySaleTrendFebruary(rgFebruary.getText().toString());
 		}
 
 		if(radioGroupMarch.getCheckedRadioButtonId() != -1) {
 			RadioButton rgMarch = (RadioButton) findViewById(radioGroupMarch.getCheckedRadioButtonId());
-			entrepreneurDto.setMonthlySaleTrendMarch(rgMarch.getText().toString());
+			surveyDto.setMonthlySaleTrendMarch(rgMarch.getText().toString());
 		}
 
 		if(radioGroupApril.getCheckedRadioButtonId() != -1) {
 			RadioButton rgApril = (RadioButton) findViewById(radioGroupApril.getCheckedRadioButtonId());
-			entrepreneurDto.setMonthlySaleTrendApril(rgApril.getText().toString());
+			surveyDto.setMonthlySaleTrendApril(rgApril.getText().toString());
 		}
 
 		if(radioGroupMay.getCheckedRadioButtonId() != -1) {
 			RadioButton rgMay = (RadioButton) findViewById(radioGroupMay.getCheckedRadioButtonId());
-			entrepreneurDto.setMonthlySaleTrendMay(rgMay.getText().toString());
+			surveyDto.setMonthlySaleTrendMay(rgMay.getText().toString());
 		}
 
 		if(radioGroupJune.getCheckedRadioButtonId() != -1) {
 			RadioButton rgJune = (RadioButton) findViewById(radioGroupJune.getCheckedRadioButtonId());
-			entrepreneurDto.setMonthlySaleTrendJune(rgJune.getText().toString());
+			surveyDto.setMonthlySaleTrendJune(rgJune.getText().toString());
 		}
 
 		if(radioGroupJuly.getCheckedRadioButtonId() != -1) {
 			RadioButton rgJuly = (RadioButton) findViewById(radioGroupJuly.getCheckedRadioButtonId());
-			entrepreneurDto.setMonthlySaleTrendJuly(rgJuly.getText().toString());
+			surveyDto.setMonthlySaleTrendJuly(rgJuly.getText().toString());
 
 		}
 
 		if(radioGroupAugust.getCheckedRadioButtonId() != -1) {
 			RadioButton rgAugust = (RadioButton) findViewById(radioGroupAugust.getCheckedRadioButtonId());
-			entrepreneurDto.setMonthlySaleTrendAugust(rgAugust.getText().toString());
+			surveyDto.setMonthlySaleTrendAugust(rgAugust.getText().toString());
 
 		}
 
 		if(radioGroupSeptember.getCheckedRadioButtonId() != -1) {
 			RadioButton rgSeptember = (RadioButton) findViewById(radioGroupSeptember.getCheckedRadioButtonId());
-			entrepreneurDto.setMonthlySaleTrendSeptember(rgSeptember.getText().toString());
+			surveyDto.setMonthlySaleTrendSeptember(rgSeptember.getText().toString());
 		}
 
 		if(radioGroupOctober.getCheckedRadioButtonId() != -1) {
 			RadioButton rgOctober = (RadioButton) findViewById(radioGroupOctober.getCheckedRadioButtonId());
-			entrepreneurDto.setMonthlySaleTrendOctober(rgOctober.getText().toString());
+			surveyDto.setMonthlySaleTrendOctober(rgOctober.getText().toString());
 		}
 
 		if(radioGroupNovember.getCheckedRadioButtonId() != -1) {
 			RadioButton rgNovember = (RadioButton) findViewById(radioGroupNovember.getCheckedRadioButtonId());
-			entrepreneurDto.setMonthlySaleTrendNovember(rgNovember.getText().toString());
+			surveyDto.setMonthlySaleTrendNovember(rgNovember.getText().toString());
 
 		}
 
 		if(radioGroupDecember.getCheckedRadioButtonId() != -1) {
 			RadioButton rgDecember = (RadioButton) findViewById(radioGroupDecember.getCheckedRadioButtonId());
-			entrepreneurDto.setMonthlySaleTrendDecember(rgDecember.getText().toString());
+			surveyDto.setMonthlySaleTrendDecember(rgDecember.getText().toString());
 		}
 
 
 		if(eTextSalesToExternal.getText() != null) {
-			entrepreneurDto.setSaleToExternalCustomer(eTextSalesToExternal.getText().toString());
+			surveyDto.setSaleToExternalCustomer(eTextSalesToExternal.getText().toString());
 		}
 
 		if(eTextPurchaseEntrepreneur.getText() != null) {
-			entrepreneurDto.setPurchaseByEntrepreneur(eTextPurchaseEntrepreneur.getText().toString());
+			surveyDto.setPurchaseByEntrepreneur(eTextPurchaseEntrepreneur.getText().toString());
 		}
 	}
 }

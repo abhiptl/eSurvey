@@ -20,13 +20,13 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import gov.com.esurvey.domain.EntrepreneurDto;
+import gov.com.esurvey.domain.SurveyDto;
 
 public class EntrepreneurActivity extends AppCompatActivity {
 
 	private Button buttonNext;
 
-	EntrepreneurDto entrepreneurDto;
+	SurveyDto surveyDto;
 
 	private EditText eTextState;
 	private EditText eTextDistrict;
@@ -134,66 +134,66 @@ public class EntrepreneurActivity extends AppCompatActivity {
 		initBusinessTypes();
 
 
-		entrepreneurDto = (EntrepreneurDto)(getIntent().getSerializableExtra(MainActivity.ENTREPRENEUR_DTO));
+		surveyDto = (SurveyDto)(getIntent().getSerializableExtra(MainActivity.ENTREPRENEUR_DTO));
 
-		if(entrepreneurDto.getState() != null) {
-			eTextState.setText(entrepreneurDto.getState());
+		if(surveyDto.getState() != null) {
+			eTextState.setText(surveyDto.getState());
 		}
 
-		if(entrepreneurDto.getDistrict() != null) {
-			eTextDistrict.setText(entrepreneurDto.getDistrict());
+		if(surveyDto.getDistrict() != null) {
+			eTextDistrict.setText(surveyDto.getDistrict());
 		}
 
-		if(entrepreneurDto.getBlock() != null) {
-			eTextBlock.setText(entrepreneurDto.getBlock());
+		if(surveyDto.getBlock() != null) {
+			eTextBlock.setText(surveyDto.getBlock());
 		}
 
-		if(entrepreneurDto.getVillage() != null) {
-			eTextVillage.setText(entrepreneurDto.getVillage());
+		if(surveyDto.getVillage() != null) {
+			eTextVillage.setText(surveyDto.getVillage());
 		}
 
-		if(entrepreneurDto.getName() != null) {
-			eTextName.setText(entrepreneurDto.getName());
+		if(surveyDto.getName() != null) {
+			eTextName.setText(surveyDto.getName());
 		}
 
-		if(entrepreneurDto.getPhoneNumber() != null) {
-			eTextPhoneNumber.setText(entrepreneurDto.getPhoneNumber());
+		if(surveyDto.getPhoneNumber() != null) {
+			eTextPhoneNumber.setText(surveyDto.getPhoneNumber());
 		}
 
-		if(entrepreneurDto.getStartYearOfBusiness() != null) {
-			eTextYearStartBusiness.setText(entrepreneurDto.getStartYearOfBusiness());
+		if(surveyDto.getStartYearOfBusiness() != null) {
+			eTextYearStartBusiness.setText(surveyDto.getStartYearOfBusiness());
 		}
 
-		if(entrepreneurDto.getRoadType() != null) {
-			checkRoadType(entrepreneurDto.getRoadType());
+		if(surveyDto.getRoadType() != null) {
+			checkRoadType(surveyDto.getRoadType());
 		}
 
-		if(entrepreneurDto.getMarketType() != null) {
-			checkMarketType(entrepreneurDto.getMarketType());
+		if(surveyDto.getMarketType() != null) {
+			checkMarketType(surveyDto.getMarketType());
 		}
 
-		if(entrepreneurDto.getShopType() != null) {
-			checkShopType(entrepreneurDto.getShopType());
+		if(surveyDto.getShopType() != null) {
+			checkShopType(surveyDto.getShopType());
 		}
 
-		if(entrepreneurDto.getBusinessSize() != null) {
-			checkBusinessSize(entrepreneurDto.getBusinessSize());
+		if(surveyDto.getBusinessSize() != null) {
+			checkBusinessSize(surveyDto.getBusinessSize());
 		}
 
-		if(entrepreneurDto.getReligion() != null) {
-			checkReligion(entrepreneurDto.getReligion());
+		if(surveyDto.getReligion() != null) {
+			checkReligion(surveyDto.getReligion());
 		}
 
-		if(entrepreneurDto.getCaste() != null) {
-			checkCaste(entrepreneurDto.getCaste());
+		if(surveyDto.getCaste() != null) {
+			checkCaste(surveyDto.getCaste());
 		}
 
-		if(entrepreneurDto.getBusinessTypes() != null && entrepreneurDto.getBusinessTypes().size() != 0) {
-			textSelectedBusinessTypes.setText(TextUtils.join(",", entrepreneurDto.getBusinessTypes()));
+		if(surveyDto.getBusinessTypes() != null && surveyDto.getBusinessTypes().size() != 0) {
+			textSelectedBusinessTypes.setText(TextUtils.join(",", surveyDto.getBusinessTypes()));
 		}
 
-		if(entrepreneurDto.getCompetitorCount() != null) {
-			eTextCompetitiorsCount.setText(entrepreneurDto.getCompetitorCount());
+		if(surveyDto.getCompetitorCount() != null) {
+			eTextCompetitiorsCount.setText(surveyDto.getCompetitorCount());
 		}
 	}
 
@@ -364,44 +364,44 @@ public class EntrepreneurActivity extends AppCompatActivity {
 		buildEntrepreneurDto();
 
 		Intent intent = new Intent(this, IncomeDetailsActivity.class);
-		intent.putExtra(MainActivity.ENTREPRENEUR_DTO, entrepreneurDto);
+		intent.putExtra(MainActivity.ENTREPRENEUR_DTO, surveyDto);
 		startActivity(intent);
 
 	}
 
 	public void buildEntrepreneurDto() {
-		entrepreneurDto.setState(eTextState.getText().toString());
-		entrepreneurDto.setDistrict(eTextDistrict.getText().toString());
-		entrepreneurDto.setBlock(eTextBlock.getText().toString());
-		entrepreneurDto.setVillage(eTextVillage.getText().toString());
+		surveyDto.setState(eTextState.getText().toString());
+		surveyDto.setDistrict(eTextDistrict.getText().toString());
+		surveyDto.setBlock(eTextBlock.getText().toString());
+		surveyDto.setVillage(eTextVillage.getText().toString());
 
-		entrepreneurDto.setName(eTextName.getText().toString());
-		entrepreneurDto.setPhoneNumber(eTextPhoneNumber.getText().toString());
-		entrepreneurDto.setStartYearOfBusiness(eTextYearStartBusiness.getText().toString());
+		surveyDto.setName(eTextName.getText().toString());
+		surveyDto.setPhoneNumber(eTextPhoneNumber.getText().toString());
+		surveyDto.setStartYearOfBusiness(eTextYearStartBusiness.getText().toString());
 
 		RadioButton rdRoadType = (RadioButton) findViewById(radioGroupRoadType.getCheckedRadioButtonId());
-		entrepreneurDto.setRoadType(rdRoadType.getText().toString());
+		surveyDto.setRoadType(rdRoadType.getText().toString());
 
 		RadioButton rdMarketType = (RadioButton) findViewById(radioGroupMarketType.getCheckedRadioButtonId());
-		entrepreneurDto.setMarketType(rdMarketType.getText().toString());
+		surveyDto.setMarketType(rdMarketType.getText().toString());
 
 		RadioButton rdShopType = (RadioButton) findViewById(radioGroupShopType.getCheckedRadioButtonId());
-		entrepreneurDto.setShopType(rdShopType.getText().toString());
+		surveyDto.setShopType(rdShopType.getText().toString());
 
 		RadioButton rdBusinessSize = (RadioButton) findViewById(radioGroupSizeBusiness.getCheckedRadioButtonId());
-		entrepreneurDto.setBusinessSize(rdBusinessSize.getText().toString());
+		surveyDto.setBusinessSize(rdBusinessSize.getText().toString());
 
 		RadioButton rdReligion = (RadioButton) findViewById(radioGroupReligion.getCheckedRadioButtonId());
-		entrepreneurDto.setReligion(rdReligion.getText().toString());
+		surveyDto.setReligion(rdReligion.getText().toString());
 
 		RadioButton rdCaste = (RadioButton) findViewById(radioGroupCaste.getCheckedRadioButtonId());
-		entrepreneurDto.setCaste(rdCaste.getText().toString());
+		surveyDto.setCaste(rdCaste.getText().toString());
 
 		String businessTypes = eTextYearStartBusiness.getText().toString();
 		String[] types = businessTypes.split(",");
-		entrepreneurDto.setBusinessTypes(Arrays.asList(types));
+		surveyDto.setBusinessTypes(Arrays.asList(types));
 
-		entrepreneurDto.setCompetitorCount(eTextCompetitiorsCount.getText().toString());
+		surveyDto.setCompetitorCount(eTextCompetitiorsCount.getText().toString());
 
 	}
 
