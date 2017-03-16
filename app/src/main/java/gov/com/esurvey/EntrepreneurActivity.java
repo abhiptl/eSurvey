@@ -325,7 +325,7 @@ public class EntrepreneurActivity extends AppCompatActivity {
 				if(valid) {
 					next();
 				} else {
-					//TODO
+					//Does not proceed to next action. Error field will be marked red
 				}
 			}
 		});
@@ -334,10 +334,26 @@ public class EntrepreneurActivity extends AppCompatActivity {
 	public boolean validate() {
 		boolean valid = true;
 
-		if(eTextVillage.getText() == null || eTextVillage.getText().length() == 0) {
+		/*if(eTextVillage.getText() == null || eTextVillage.getText().length() == 0) {
 			eTextVillage.setError(getResources().getString(R.string.error_required));
 			valid = false;
+		}*/
+
+		if(eTextName.getText() == null || eTextName.getText().length() == 0) {
+			eTextName.setError(getResources().getString(R.string.error_required));
+			valid = false;
 		}
+
+		if(eTextPhoneNumber.getText() == null || eTextPhoneNumber.getText().length() == 0) {
+			eTextPhoneNumber.setError(getResources().getString(R.string.error_required));
+			valid = false;
+		}
+
+		if(eTextYearStartBusiness.getText() == null || eTextYearStartBusiness.getText().length() == 0) {
+			eTextYearStartBusiness.setError(getResources().getString(R.string.error_required));
+			valid = false;
+		}
+
 
 		return valid;
 	}
