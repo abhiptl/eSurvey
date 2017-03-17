@@ -357,6 +357,20 @@ public class EntrepreneurActivity extends AppCompatActivity {
 			valid = false;
 		}
 
+		if(textSelectedBusinessTypes.getText().equals("Click here to open Dialog")) {
+			textSelectedBusinessTypes.setError("Select at least one Business type");
+			valid = false;
+		} else {
+			String selectedBusinessTypes = textSelectedBusinessTypes.getText().toString();
+			String[] types = selectedBusinessTypes.split(",");
+
+			if(types.length > 6) {
+				textSelectedBusinessTypes.setError("Maximum only 6 Business types can be selected.");
+				valid = false;
+			}
+
+		}
+
 
 		return valid;
 	}
