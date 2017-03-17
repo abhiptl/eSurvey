@@ -291,7 +291,7 @@ public class MonthlySaleTrendsActivity extends AppCompatActivity {
 				buildEntrepreneurDto();
 				Log.i(TAG, surveyDto.toString());
 				long id = insertSurveyDetail();
-				Toast.makeText(getApplicationContext(), "Survey has been saved. Please sync to pending surveys.", Toast
+				Toast.makeText(getApplicationContext(), "Survey has been saved. Please sync to submit pending surveys.", Toast
 						.LENGTH_LONG)
 						.show();
 				Intent intent = new Intent(getApplicationContext(), MainActivity.class);
