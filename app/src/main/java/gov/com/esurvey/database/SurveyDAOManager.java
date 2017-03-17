@@ -376,8 +376,11 @@ public class SurveyDAOManager {
 				SurveyDAOManager.SALARY_TREND_OCTOBER, SurveyDAOManager.SALARY_TREND_NOVEMBER, SurveyDAOManager.SALARY_TREND_DECEMBER,
 				SurveyDAOManager.SALE_EXTERNAL_CUSTOMER,SurveyDAOManager.PURCHASE_BY_ENTREPRENEUR, SurveyDAOManager.CREATED_DATE };
 
-		Cursor cursor = database.query(SurveyDAOManager.TABLE_NAME, columns, SurveyDAOManager.SYNC_STATUS + " = ?",
-				new String[] {SYNC_STATUS_PENDING}, null, null, null);
+	/*	Cursor cursor = database.query(SurveyDAOManager.TABLE_NAME, columns, SurveyDAOManager.SYNC_STATUS + " = ?",
+				new String[] {SYNC_STATUS_PENDING}, null, null, null);*/
+
+		Cursor cursor = database.query(SurveyDAOManager.TABLE_NAME, columns, null,
+				null, null, null, null);
 
 		Log.i(TAG, "Count :" + cursor.getCount());
 		return cursor;
