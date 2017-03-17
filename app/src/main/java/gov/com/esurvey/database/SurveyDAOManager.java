@@ -322,7 +322,7 @@ public class SurveyDAOManager {
 		contentValue.put(PURCHASE_BY_ENTREPRENEUR, surveyDto.getPurchaseByEntrepreneur());
 
 
-		contentValue.put(CREATED_DATE, "'"+getCurrentTimeStamp()+"'");
+		contentValue.put(CREATED_DATE, getCurrentTimeStamp());
 		contentValue.put(SYNC_STATUS, SYNC_STATUS_PENDING);
 		String syncDate = null;
 		contentValue.put(SYNC_DATE, syncDate);
@@ -346,7 +346,7 @@ public class SurveyDAOManager {
 	public Cursor getPendingRecordsToSync() {
 
 
-		String[] columns = new String[] { SurveyDAOManager._ID, SurveyDAOManager.STATE, SurveyDAOManager.DISTRICT, SurveyDAOManager.STATE,
+		String[] columns = new String[] { SurveyDAOManager._ID, SurveyDAOManager.STATE, SurveyDAOManager.DISTRICT,
 				SurveyDAOManager.BLOCK, SurveyDAOManager.VILLAGE, SurveyDAOManager.NAME, SurveyDAOManager.PHONE_NUMBER,
 				SurveyDAOManager.BUSINESS_START_YEAR, SurveyDAOManager.ROAD_TYPE, SurveyDAOManager.MARKET_TYPE, SurveyDAOManager.SHOP_TYPE,
 				SurveyDAOManager.BUSINESS_SIZE,SurveyDAOManager.RELIGION, SurveyDAOManager.CASTE, SurveyDAOManager.BUSINESS_TYPES,
