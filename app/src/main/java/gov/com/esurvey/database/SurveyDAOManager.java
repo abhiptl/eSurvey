@@ -1,14 +1,19 @@
 package gov.com.esurvey.database;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
+import android.util.Log;
 import gov.com.esurvey.domain.SurveyDto;
 
 /**
@@ -22,6 +27,8 @@ public class SurveyDAOManager {
 	// Table columns
 	public static final String _ID = "_id";
 
+
+	private static final String TAG = SurveyDAOManager.class.getSimpleName();
 
 	public static final String STATE = "state";
 	public static final String DISTRICT = "district";
@@ -315,7 +322,7 @@ public class SurveyDAOManager {
 		contentValue.put(PURCHASE_BY_ENTREPRENEUR, surveyDto.getPurchaseByEntrepreneur());
 
 
-		contentValue.put(CREATED_DATE, getCurrentTimeStamp());
+		contentValue.put(CREATED_DATE, "'"+getCurrentTimeStamp()+"'");
 		contentValue.put(SYNC_STATUS, SYNC_STATUS_PENDING);
 		String syncDate = null;
 		contentValue.put(SYNC_DATE, syncDate);
@@ -325,41 +332,92 @@ public class SurveyDAOManager {
 	}
 
 	public long getTotalPendingSurvey() {
-
-		/*Cursor cursor = database.rawQuery("SELECT COUNT(*) FROM "+ TABLE_NAME + " WHERE "+SYNC_STATUS + " = ?",
-				new String[] { String.valueOf(SYNC_STATUS_PENDING)});*/
-		long totalPendingSurvey = DatabaseUtils.longForQuery(database, "SELECT COUNT(*) FROM "+ TABLE_NAME, null);
-
-	/*	if (cursor != null) {
-			totalPendingSurvey = cursor.getCount();
-		}
-*/
+		long totalPendingSurvey = DatabaseUtils.longForQuery(database, "SELECT COUNT(*) FROM "+ TABLE_NAME + " WHERE " + SurveyDAOManager
+				.SYNC_STATUS + " = '" + SYNC_STATUS_PENDING +"'", null);
 		return totalPendingSurvey;
 	}
 
-	/*public Cursor fetch() {
-		String[] columns = new String[] { SurveyDAOManager._ID, SurveyDAOManager.SUBJECT, SurveyDAOManager.DESC };
-		Cursor cursor = database.query(SurveyDAOManager.TABLE_NAME, columns, null, null, null, null, null);
-		if (cursor != null) {
-			cursor.moveToFirst();
-		}
+	public long getTotalSurvey() {
+		long totalSurvey = DatabaseUtils.longForQuery(database, "SELECT COUNT(*) FROM "+ TABLE_NAME , null);
+		return totalSurvey;
+	}
+
+
+	public Cursor getPendingRecordsToSync() {
+
+
+		String[] columns = new String[] { SurveyDAOManager._ID, SurveyDAOManager.STATE, SurveyDAOManager.DISTRICT, SurveyDAOManager.STATE,
+				SurveyDAOManager.BLOCK, SurveyDAOManager.VILLAGE, SurveyDAOManager.NAME, SurveyDAOManager.PHONE_NUMBER,
+				SurveyDAOManager.BUSINESS_START_YEAR, SurveyDAOManager.ROAD_TYPE, SurveyDAOManager.MARKET_TYPE, SurveyDAOManager.SHOP_TYPE,
+				SurveyDAOManager.BUSINESS_SIZE,SurveyDAOManager.RELIGION, SurveyDAOManager.CASTE, SurveyDAOManager.BUSINESS_TYPES,
+				SurveyDAOManager.COMPETITOR_COUNT, SurveyDAOManager.NO_MONTHS_NORMAL, SurveyDAOManager.NO_MONTHS_HIGH,
+				SurveyDAOManager.TOTAL_SALES_CREDIT_NORMAL, SurveyDAOManager.TOTAL_SALES_CREDIT_HIGH,
+				SurveyDAOManager.TOTAL_SALES_CASH_NORMAL, SurveyDAOManager.TOTAL_SALES_CASH_HIGH, SurveyDAOManager.COST_RAW_CASH_NORMAL,
+				SurveyDAOManager.COST_RAW_CASH_HIGH, SurveyDAOManager.COST_RAW_CREDIT_NORMAL, SurveyDAOManager.COST_RAW_CREDIT_HIGH,
+				SurveyDAOManager.PURCHASE_FREQUENCY_NORMAL, SurveyDAOManager.PURCHASE_FREQUENCY_HIGH,
+				SurveyDAOManager.WAGES_WITHDRAWN_NORMAL,SurveyDAOManager.WAGES_WITHDRAWN_HIGH, SurveyDAOManager.RENT_NORMAL,
+				SurveyDAOManager.RENT_HIGH, SurveyDAOManager.COST_ELECTRICITY_NORMAL, SurveyDAOManager.COST_ELECTRICITY_HIGH,
+				SurveyDAOManager.COST_TRANSPORTATION_NORMAL, SurveyDAOManager.COST_TRANSPORTATION_HIGH,
+				SurveyDAOManager.COST_PACKAGING_NORMAL, SurveyDAOManager.COST_PACKAGING_HIGH, SurveyDAOManager.COST_FUEL_NORMAL,
+				SurveyDAOManager.COST_FUEL_HIGH,SurveyDAOManager.COMMISSION_NORMAL, SurveyDAOManager.COMMISSION_HIGH,
+				SurveyDAOManager.COST_WASTAGE_NORMAL, SurveyDAOManager.COST_WASTAGE_HIGH, SurveyDAOManager.WAGES_PAID_NORMAL,
+				SurveyDAOManager.WAGES_PAID_HIGH, SurveyDAOManager.COST_PROMOTION_NORMAL, SurveyDAOManager.COST_PROMOTION_HIGH,
+				SurveyDAOManager.COST_COMMUNICATION_NORMAL, SurveyDAOManager.COST_COMMUNICATION_HIGH,
+				SurveyDAOManager.COST_MACHINE_REPAIR_NORMAL, SurveyDAOManager.COST_MACHINE_REPAIR_HIGH, SurveyDAOManager.COST_OTHER_NORMAL,
+				SurveyDAOManager.COST_OTHER_HIGH, SurveyDAOManager.AMOUNT_RECEIVED_FROM_CUSTOMER, SurveyDAOManager.AMOUNT_PAID_TO_SUPPLIER,
+				SurveyDAOManager.AMOUNT_INVESTED_IN_START, SurveyDAOManager.AMOUNT_INVESTED_AFTER_START,
+				SurveyDAOManager.OPERATION_MONTHS_YEAR, SurveyDAOManager.OPERATION_DAYS_WEEK,SurveyDAOManager.OPERATION_HOURS_WEEK,
+				SurveyDAOManager.ENTREPRENEUR_INVOLVED, SurveyDAOManager.ENTREPRENEUR_INVOLVED_MONTH,
+				SurveyDAOManager.FAMILY_MEMBERS_INVOLVED, SurveyDAOManager.FAMILY_MEMBERS_INVOLVED_MONTH,
+				SurveyDAOManager.EXTERNAL_LABOURS_INVOLVED, SurveyDAOManager.EXTERNAL_LABOURS_INVOLVED_MONTH,
+				SurveyDAOManager.SALARY_TREND_JANUARY, SurveyDAOManager.SALARY_TREND_FEBRUARY, SurveyDAOManager.SALARY_TREND_MARCH,
+				SurveyDAOManager.SALARY_TREND_APRIL, SurveyDAOManager.SALARY_TREND_MAY, SurveyDAOManager.SALARY_TREND_JUNE,
+				SurveyDAOManager.SALARY_TREND_JULY, SurveyDAOManager.SALARY_TREND_AUGUST, SurveyDAOManager.SALARY_TREND_SEPTEMBER,
+				SurveyDAOManager.SALARY_TREND_OCTOBER, SurveyDAOManager.SALARY_TREND_NOVEMBER, SurveyDAOManager.SALARY_TREND_DECEMBER,
+				SurveyDAOManager.SALE_EXTERNAL_CUSTOMER,SurveyDAOManager.PURCHASE_BY_ENTREPRENEUR, SurveyDAOManager.CREATED_DATE };
+
+	/*	Cursor cursor = database.query(SurveyDAOManager.TABLE_NAME, columns, SurveyDAOManager.SYNC_STATUS + " = ?",
+				new String[] {SYNC_STATUS_PENDING}, null, null, null);*/
+
+		Cursor cursor = database.query(SurveyDAOManager.TABLE_NAME, columns, null,
+				null, null, null, null);
+
+		Log.i(TAG, "Count :" + cursor.getCount());
 		return cursor;
 	}
 
-	public int update(long _id, String name, String desc) {
-		ContentValues contentValues = new ContentValues();
-		contentValues.put(SurveyDAOManager.SUBJECT, name);
-		contentValues.put(SurveyDAOManager.DESC, desc);
-		int i = database.update(SurveyDAOManager.TABLE_NAME, contentValues, SurveyDAOManager._ID + " = " + _id, null);
-		return i;
+
+	public int updateSyncStatus(long[] ids, String syncStatus) {
+
+		List<Long> idList = new ArrayList<>();
+		for(int i = 0;i < ids.length ; i++){
+			idList.add(ids[i]);
+		}
+
+		String idsString = TextUtils.join(",", idList);
+
+
+		StringBuilder updateQueryBuilder = new StringBuilder();
+		updateQueryBuilder.append("UPDATE ").append(SurveyDAOManager.TABLE_NAME).append(" SET ");
+		updateQueryBuilder.append(SurveyDAOManager.SYNC_DATE).append(" = ").append("'").append(getCurrentTimeStamp()).append("'");
+		updateQueryBuilder.append(", ");
+		updateQueryBuilder.append(SurveyDAOManager.SYNC_STATUS).append(" = ").append("'").append(syncStatus).append("'");
+
+		updateQueryBuilder.append(" WHERE ");
+		updateQueryBuilder.append(SurveyDAOManager._ID).append(" in ");
+		updateQueryBuilder.append(" ( ");
+		updateQueryBuilder.append(idsString);
+		updateQueryBuilder.append(" ); ");
+
+		Log.i(TAG, "ids :" +idsString);
+		Log.i(TAG, "Update query :" + updateQueryBuilder.toString());
+
+		Cursor cursor = database.rawQuery(updateQueryBuilder.toString(), null);
+		return cursor.getCount();
 	}
 
-	public void delete(long _id) {
-		database.delete(SurveyDAOManager.TABLE_NAME, SurveyDAOManager._ID + "=" + _id, null);
-	}*/
-
 	public String getCurrentTimeStamp() {
-		return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date());
+		return new SimpleDateFormat("dd-MMM-yyyy:HHmmss").format(new Date());
 	}
 
 }

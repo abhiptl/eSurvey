@@ -190,6 +190,9 @@ public class EntrepreneurActivity extends AppCompatActivity {
 
 		if(surveyDto.getBusinessTypes() != null && surveyDto.getBusinessTypes().size() != 0) {
 			textSelectedBusinessTypes.setText(TextUtils.join(",", surveyDto.getBusinessTypes()));
+		} else {
+			textSelectedBusinessTypes.setText("Click here to open Dialog");
+
 		}
 
 		if(surveyDto.getCompetitorCount() != null) {
@@ -354,6 +357,20 @@ public class EntrepreneurActivity extends AppCompatActivity {
 			valid = false;
 		}
 
+		if(textSelectedBusinessTypes.getText().equals("Click here to open Dialog")) {
+			textSelectedBusinessTypes.setError("Select at least one Business type");
+			valid = false;
+		} else {
+			String selectedBusinessTypes = textSelectedBusinessTypes.getText().toString();
+			String[] types = selectedBusinessTypes.split(",");
+
+			if(types.length > 6) {
+				textSelectedBusinessTypes.setError("Maximum only 6 Business types can be selected.");
+				valid = false;
+			}
+
+		}
+
 
 		return valid;
 	}
@@ -397,9 +414,12 @@ public class EntrepreneurActivity extends AppCompatActivity {
 		RadioButton rdCaste = (RadioButton) findViewById(radioGroupCaste.getCheckedRadioButtonId());
 		surveyDto.setCaste(rdCaste.getText().toString());
 
-		String businessTypes = eTextYearStartBusiness.getText().toString();
-		String[] types = businessTypes.split(",");
-		surveyDto.setBusinessTypes(Arrays.asList(types));
+		if(!textSelectedBusinessTypes.getText().equals("Click here to open Dialog")) {
+			String businessTypes = textSelectedBusinessTypes.getText().toString();
+			String[] types = businessTypes.split(",");
+			surveyDto.setBusinessTypes(Arrays.asList(types));
+		}
+
 
 		surveyDto.setCompetitorCount(eTextCompetitiorsCount.getText().toString());
 
@@ -409,14 +429,158 @@ public class EntrepreneurActivity extends AppCompatActivity {
 		final List<CharSequence> list = new ArrayList<CharSequence>();
 
 		list.add("Agarbatti making and selling");
-		list.add("Agricultural rentals");
+		list.add("Agarbatti trading");
 		list.add("Agricultural rentals");
 		list.add("Aluminium works");
+		list.add("Autorickshaw/ passenger van");
+		list.add("Ayurvedic medicines");
 		list.add("Bag making");
 		list.add("Bakery");
+		list.add("Bamboo products making");
+		list.add("Bangle making and selling");
+		list.add("Bangle trading");
+		list.add("Beauty parlor");
+		list.add("Bed making and selling – Mattress, Razai");
 		list.add("Bed trading – Mattress, Razai");
+		list.add("Beedi making and selling");
+		list.add("Beef trading");
+		list.add("Bike repair");
 		list.add("Bindi making and selling");
+		list.add("Blacksmith");
 		list.add("Book stall");
+		list.add("Bricks and Tiles making and selling");
+		list.add("Bricks/ Tiles trading");
+		list.add("Broom making and selling");
+		list.add("Cable / Dish TV");
+		list.add("Candle making and selling");
+		list.add("Carpenter");
+		list.add("Cart making - Bullock cart etc");
+		list.add("Catering");
+		list.add("Cement Product making and selling");
+		list.add("Cement product trading");
+		list.add("Cement trading");
+		list.add("Centering/ construction");
+		list.add("Chicken shop");
+		list.add("Chips making and selling (Namkeen)");
+		list.add("Chips trading (Namkeen)");
+		list.add("Cigarette & Pan shop");
+		list.add("Coir, rope making");
+		list.add("Cold drinks shop");
+		list.add("Computer services – repair");
+		list.add("Cow rearing and selling (Different from Beef)");
+		list.add("Cycle repair shop");
+		list.add("Dairy");
+		list.add("Dairy products - Paneer, curd etc");
+		list.add("Dal trading");
+		list.add("Dental brush stick - Neem/Sal (datoon)");
+		list.add("Doll making");
+		list.add("Duck rearing and selling");
+		list.add("Egg Trading");
+		list.add("Electricals shop – Wire, bulbs etc");
+		list.add("Electronics Repair");
+		list.add("Electronics shop – Fridge, Tv etc");
+		list.add("Exotic animals rearing – rabbit, emu, pigeon etc");
+		list.add("Fast food");
+		list.add("Fertilizer shop");
+		list.add("Fish Rearing and selling");
+		list.add("Fish trading");
+		list.add("Flour mill");
+		list.add("Flowers trading");
+		list.add("Footwear repair – Cobbler");
+		list.add("Forest produce – others");
+		list.add("Four/ three wheeler repair");
+		list.add("Fruits");
+		list.add("Fuel");
+		list.add("Furniture shop");
+		list.add("Gas Refilling & parts");
+		list.add("General Store");
+		list.add("Generator rentals");
+		list.add("Gift shop");
+		list.add("Goat & Sheep Rearing");
+		list.add("Groundnut / chana trading");
+		list.add("Hadiya / mahua selling");
+		list.add("Handicraft");
+		list.add("Handloom");
+		list.add("Hardware store");
+		list.add("Heavy Machine Rental (Stone Crusher, Mixture etc.)");
+		list.add("Honey trading");
+		list.add("Hotel (restaurant)");
+		list.add("Ice cream vending");
+		list.add("Internet, Xerox/ Printer");
+		list.add("Inverter sale shop");
+		list.add("Jewellers");
+		list.add("Juice & other drinks");
+		list.add("Kirana");
+		list.add("Ladies store");
+		list.add("Lah production and selling");
+		list.add("Lah trading");
+		list.add("Laundry service");
+		list.add("Masala processing");
+		list.add("Masala trading");
+		list.add("Mat making");
+		list.add("Matches making and selling");
+		list.add("Medical center (clinic)");
+		list.add("Medical shop");
+		list.add("Mobile repair");
+		list.add("Mobile shop");
+		list.add("Muri production and selling");
+		list.add("Muri trading");
+		list.add("Mushroom production and selling");
+		list.add("Mushroom trading");
+		list.add("Mutton shop");
+		list.add("News papers & magazines vending");
+		list.add("Notebook making and selling");
+		list.add("Oil production and selling");
+		list.add("Oil trading");
+		list.add("Opticals");
+		list.add("Paddy trading");
+		list.add("Painter");
+		list.add("Papad making");
+		list.add("Paper products  – bags, covers");
+		list.add("Petrol pump");
+		list.add("Pickles");
+		list.add("Piggery");
+		list.add("Plant nursery");
+		list.add("Plastic products making and selling");
+		list.add("Plastic products trading");
+		list.add("Plates (paper, leaf)");
+		list.add("Pooja items shop");
+		list.add("Pottery");
+		list.add("Poultry farm");
+		list.add("Printing press");
+		list.add("Private Tution");
+		list.add("Readymade/ cloth shop");
+		list.add("Rice mill");
+		list.add("Rice trading");
+		list.add("Salon");
+		list.add("Saree shop");
+		list.add("Scrap dealer");
+		list.add("Seeds shop");
+		list.add("Seri culture");
+		list.add("Shoe shop (production )");
+		list.add("Shoes Trading");
+		list.add("Soap and detergent");
+		list.add("Sound and light rental");
+		list.add("Stationary shop");
+		list.add("Studio");
+		list.add("Sweets making");
+		list.add("Sweets trading");
+		list.add("Tailoring");
+		list.add("Taxi service");
+		list.add("Tea and Snacks");
+		list.add("Tea selling");
+		list.add("Tent house");
+		list.add("Toy, Sports shop");
+		list.add("Utensils/ Vessels trading");
+		list.add("Vegetable cultivation and selling");
+		list.add("Vegetable trading");
+		list.add("Watch repair");
+		list.add("Watch trading");
+		list.add("Water Purifier Plant");
+		list.add("Welding");
+		list.add("Wine shop");
+		list.add("Other 1 (Specify)");
+
 
 
 		View openDialog = (View) findViewById(R.id.textSelectedBusinessTypes);
@@ -499,6 +663,53 @@ public class EntrepreneurActivity extends AppCompatActivity {
 		listVillages.add("Bhagwanpura");
 		listVillages.add("Bhaini Gandhuan");
 		listVillages.add("Bharoor");
+		listVillages.add("Bigarwall");
+		listVillages.add("Bir Kalan");
+		listVillages.add("Bishanpura  ");
+		listVillages.add("Bishanpura Akalgarh");
+		listVillages.add("Chaobas-Jakhepal");
+		listVillages.add("Chatha Nanhera");
+		listVillages.add("Chatha Nekta");
+		listVillages.add("Chhahar");
+		listVillages.add("Chhanjla");
+		listVillages.add("Chhanjli");
+		listVillages.add("Daula Singh wala");
+		listVillages.add("Dhaliwal Bas-Jakhepal");
+		listVillages.add("Dharamgarh");
+		listVillages.add("Fatehgarh");
+		listVillages.add("Gandhuan");
+		listVillages.add("Ghassiwal");
+		listVillages.add("Gobindgarh Jejian");
+		listVillages.add("Humblebas-Jakhepal");
+		listVillages.add("Jakhepalbas-Jhakepal");
+		listVillages.add("Jharon");
+		listVillages.add("Kanakwal Bhanguan");
+		listVillages.add("Khadial");
+		listVillages.add("Kothe Alla Singhwala");
+		listVillages.add("Kotra Amro");
+		listVillages.add("Medewas");
+		listVillages.add("Mirja Patti Namol ");
+		listVillages.add("Mojowal");
+		listVillages.add("Murad Khera");
+		listVillages.add("Namol");
+		listVillages.add("Nilowal");
+		listVillages.add("Phalera");
+		listVillages.add("Ramgarh Jabande");
+		listVillages.add("Rampura Kothe");
+		listVillages.add("Rattangarh Patianwali");
+		listVillages.add("Sangtiwala");
+		listVillages.add("Satauj");
+		listVillages.add("Shaheed Udam Singh Nagar");
+		listVillages.add("Shahpur Kalan");
+		listVillages.add("Shahpur Khurd urf Lakhmirwala");
+		listVillages.add("Sheron");
+		listVillages.add("Sheron Model Town No.1");
+		listVillages.add("Sheron Model Town No.2");
+		listVillages.add("Singhpura");
+		listVillages.add("Tibbi Ravi Dasspura");
+		listVillages.add("Tolawal");
+		listVillages.add("Ugrahan");
+
 
 		eTextVillage.setOnClickListener(new View.OnClickListener() {
 

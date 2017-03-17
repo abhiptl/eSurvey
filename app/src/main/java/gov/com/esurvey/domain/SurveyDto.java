@@ -1,6 +1,7 @@
 package gov.com.esurvey.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,7 +28,7 @@ public class SurveyDto implements Serializable {
 	private String religion;
 	private String caste;
 
-	private List<String> businessTypes;
+	private List<String> businessTypes = new ArrayList<>();
 	private String competitorCount;
 
 	/* Income details */
