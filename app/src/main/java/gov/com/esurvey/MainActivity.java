@@ -6,8 +6,10 @@ import java.util.List;
 
 import android.Manifest;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 
 import android.support.annotation.NonNull;
@@ -43,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_main);
 
 		init();
+		registerReceiver(broadcastReceiver, new IntentFilter(
+				SyncSurveyDataService.SYNC_COMPLETED_BROADCAST_ACTION));
 
 	}
 
@@ -180,6 +184,21 @@ public class MainActivity extends AppCompatActivity {
 				break;
 			}
 		}
+	}
+
+
+	private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			initializeValues();
+		}
+	};
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		registerReceiver(broadcastReceiver, new IntentFilter(
+				SyncSurveyDataService.SYNC_COMPLETED_BROADCAST_ACTION));
 	}
 
 }

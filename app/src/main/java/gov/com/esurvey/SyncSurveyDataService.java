@@ -49,6 +49,8 @@ public class SyncSurveyDataService extends IntentService {
 
 	private String bucketKeyName;
 
+	public static final String SYNC_COMPLETED_BROADCAST_ACTION = "SYNC_COMPLETED_BROADCAST_ACTION";
+
 
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
@@ -174,6 +176,8 @@ public class SyncSurveyDataService extends IntentService {
 					surveyDAOManager.updateSyncStatus(surveyIds, SurveyDAOManager.SYNC_STATUS_SYNCED);
 					surveyDAOManager.close();
 					Toast.makeText(getApplicationContext(), "Syncing completed successfully", Toast.LENGTH_LONG).show();
+
+					sendBroadcast(new Intent(SYNC_COMPLETED_BROADCAST_ACTION));
 				}
 			}
 
