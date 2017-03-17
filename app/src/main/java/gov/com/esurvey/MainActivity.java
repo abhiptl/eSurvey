@@ -1,9 +1,12 @@
 package gov.com.esurvey;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import android.Manifest;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 
@@ -12,6 +15,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -105,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
 		String filePath = exportSurveyDataCSV.exportSurveyDataToCSV();
 		List<Long> ids = exportSurveyDataCSV.getSurveyIds();
 
+
 		if(ids.size() == 0) {
 			Toast.makeText(getApplicationContext(), "No data to Sync.", Toast.LENGTH_LONG).show();
 			return;
@@ -115,11 +120,17 @@ public class MainActivity extends AppCompatActivity {
 			idArray[i] = ids.get(i);
 		}
 
+		TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+		String deviceId = telephonyManager.getDeviceId();
+
+		String currentTimeStamp = new SimpleDateFormat("ddMMyyyy-HHmmss").format(new Date());
+		final String fileName = deviceId + "."+ currentTimeStamp + ".csv";
+
 		Log.i(TAG, "CSV generate File Path :" + filePath);
 
 		Intent syncSurveyDataIntent = new Intent(getApplicationContext(), SyncSurveyDataService.class);
 		syncSurveyDataIntent.putExtra("filepath", filePath);
-		syncSurveyDataIntent.putExtra("filename", exportSurveyDataCSV.getFileName());
+		syncSurveyDataIntent.putExtra("filename", fileName);
 		syncSurveyDataIntent.putExtra("ids", idArray);
 
 		startService(syncSurveyDataIntent);
@@ -138,11 +149,18 @@ public class MainActivity extends AppCompatActivity {
 		return (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED);
 	}
 
+	// Check for permission to write External storage
+	private boolean checkReadPhoneStatePermission() {
+		Log.d(TAG, "checkWriteExternalStoragePermission()");
+		return (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED);
+	}
+
+
 	// Asks for permission to read/write to external storage
 	private void askReadWriteExternalStoragePermission() {
 		Log.d(TAG, "askPermission()");
 		ActivityCompat.requestPermissions(this,
-				new String[] {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 999);
+				new String[] {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE}, 999);
 	}
 
 	// Verify user's response of the permission requested
@@ -153,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
 		switch (requestCode) {
 			case 999: {
 				if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED
-						&& grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+						&& grantResults[1] == PackageManager.PERMISSION_GRANTED && grantResults[2] == PackageManager.PERMISSION_GRANTED ) {
 					syncSurveyData();
 				} else {
 					//Permission denied
