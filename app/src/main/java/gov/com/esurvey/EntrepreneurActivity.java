@@ -190,6 +190,9 @@ public class EntrepreneurActivity extends AppCompatActivity {
 
 		if(surveyDto.getBusinessTypes() != null && surveyDto.getBusinessTypes().size() != 0) {
 			textSelectedBusinessTypes.setText(TextUtils.join(",", surveyDto.getBusinessTypes()));
+		} else {
+			textSelectedBusinessTypes.setText("Click here to open Dialog");
+
 		}
 
 		if(surveyDto.getCompetitorCount() != null) {
@@ -397,9 +400,12 @@ public class EntrepreneurActivity extends AppCompatActivity {
 		RadioButton rdCaste = (RadioButton) findViewById(radioGroupCaste.getCheckedRadioButtonId());
 		surveyDto.setCaste(rdCaste.getText().toString());
 
-		String businessTypes = eTextYearStartBusiness.getText().toString();
-		String[] types = businessTypes.split(",");
-		surveyDto.setBusinessTypes(Arrays.asList(types));
+		if(!textSelectedBusinessTypes.getText().equals("Click here to open Dialog")) {
+			String businessTypes = textSelectedBusinessTypes.getText().toString();
+			String[] types = businessTypes.split(",");
+			surveyDto.setBusinessTypes(Arrays.asList(types));
+		}
+
 
 		surveyDto.setCompetitorCount(eTextCompetitiorsCount.getText().toString());
 
