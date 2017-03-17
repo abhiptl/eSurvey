@@ -14,7 +14,7 @@
             android:paddingBottom="@dimen/activity_vertical_margin"
             tools:context="gov.com.esurvey.MainActivity">
 
-        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
             <TextView
                     android:text="Welcome to eSurvey"
                     android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
 
             <Button android:id="@+id/btnStartSurvey" android:textColor="@color/colorWhite" android:text="Start Survey"
                     android:background="@color/colorPrimary"
-                    android:layout_width="fill_parent" android:layout_centerInParent="true" android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
             <Space
@@ -38,29 +38,36 @@
                     android:layout_height="20dp"/>
 
             <View
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="1dip"
                     android:background="#2300"/>
 
+            <TextView android:id="@+id/textTotalPendingSurveys" android:layout_width="match_parent"
+                      android:layout_height="wrap_content" android:textStyle="bold"
+                      android:textSize="25dp" android:layout_weight="1"/>
+
+
+            <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"/>
 
             <Button android:id="@+id/btnSyncSurveyData" android:textColor="@color/colorWhite" android:text="Sync Survey"
-                    android:background="@color/colorGreen" android:bottomRightRadius="10dp"
-                    android:bottomLeftRadius="10dp"
-                    android:topLeftRadius="10dp"
-                    android:topRightRadius="10dp"
-                    android:layout_width="fill_parent" android:layout_centerInParent="true" android:layout_weight="1"
+                    android:background="@color/colorGreen"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
 
-            <!--<Space
+            <Space
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
+                    android:layout_height="20dp"/>
 
-            <Button android:id="@+id/downloadSurveyData" android:textColor="@color/colorWhite" android:text="Download Survey"
-                    android:background="@color/colorGreen" android:bottomRightRadius="10dp"
-                    android:bottomLeftRadius="10dp"
-                    android:topLeftRadius="10dp"
-                    android:topRightRadius="10dp"
-                    android:layout_width="fill_parent" android:layout_centerInParent="true" android:layout_weight="1" android:layout_height="wrap_content"/>-->
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:background="#2300"/>
+
+            <TextView android:id="@+id/textTotalSurveys" android:layout_width="match_parent"
+                      android:layout_height="wrap_content" android:textStyle="bold"
+                      android:textSize="25dp" android:layout_weight="1"/>
 
         </LinearLayout>
 

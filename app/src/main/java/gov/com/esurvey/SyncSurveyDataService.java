@@ -17,6 +17,7 @@ import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
+import gov.com.esurvey.database.SurveyDAOManager;
 
 /**
  * An {@link IntentService} subclass for handling asynchronous task requests in
@@ -31,12 +32,22 @@ public class SyncSurveyDataService extends IntentService {
 		super("SyncSurveyDataService");
 	}
 
-	File fileToUpload = new File("/storage/emulated/0/DCIM/Profile.jpg");
-
+	//File fileToUpload = new File("/storage/emulated/0/DCIM/Profile.jpg");
+	File fileToUpload = null;
 	//File fileToDownload = new File("/storage/sdcard0/Pictures/MY");
 
 	AmazonS3 s3;
 	TransferUtility transferUtility;
+
+	SurveyDAOManager surveyDAOManager;
+
+	private long[] surveyIds;
+
+	private static final String BUCKET_NAME = "e-surveydata";
+
+	private static final String IDENTITY_POOL_ID = "eu-west-1:cd7e1c2b-c7af-4054-828f-c77661e35cd8";
+
+	private String bucketKeyName;
 
 
 	@Override
@@ -48,6 +59,14 @@ public class SyncSurveyDataService extends IntentService {
 
 	@Override
 	protected void onHandleIntent(Intent intent) {
+		surveyDAOManager = new SurveyDAOManager(this);
+
+		String filepath = intent.getStringExtra("filepath");
+		fileToUpload = new File(filepath);
+
+		bucketKeyName = intent.getStringExtra("filename");
+
+		surveyIds = intent.getLongArrayExtra("ids");
 
 		// callback method to call credentialsProvider method.
 		credentialsProvider();
@@ -64,6 +83,7 @@ public class SyncSurveyDataService extends IntentService {
 	public void onDestroy() {
 		Log.i(TAG, "SyncSurveyDataService onDestroy");
 		super.onDestroy();
+
 	}
 
 	public void credentialsProvider(){
@@ -71,7 +91,7 @@ public class SyncSurveyDataService extends IntentService {
 		// Initialize the Amazon Cognito credentials provider
 		CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
 				getApplicationContext(),
-				"eu-west-1:cd7e1c2b-c7af-4054-828f-c77661e35cd8", // Identity Pool ID
+				IDENTITY_POOL_ID, // Identity Pool ID
 				Regions.EU_WEST_1 // Region
 		);
 
@@ -104,8 +124,8 @@ public class SyncSurveyDataService extends IntentService {
 	public void setFileToUpload(){
 
 		TransferObserver transferObserver = transferUtility.upload(
-				"e-survey-eu",     /* The bucket to upload to */
-				"Profile.jpg",    /* The key for the uploaded object */
+				BUCKET_NAME,     /* The bucket to upload to */
+				bucketKeyName,    /* The key for the uploaded object */
 				fileToUpload       /* The file where the data to upload exists */
 		);
 
@@ -150,8 +170,10 @@ public class SyncSurveyDataService extends IntentService {
 					Toast.makeText(getApplicationContext(), "Syncing is in progress", Toast.LENGTH_LONG).show();
 				}
 				if(state == TransferState.COMPLETED) {
+					surveyDAOManager.open();
+					surveyDAOManager.updateSyncStatus(surveyIds, SurveyDAOManager.SYNC_STATUS_SYNCED);
+					surveyDAOManager.close();
 					Toast.makeText(getApplicationContext(), "Syncing completed successfully", Toast.LENGTH_LONG).show();
-
 				}
 			}
 
