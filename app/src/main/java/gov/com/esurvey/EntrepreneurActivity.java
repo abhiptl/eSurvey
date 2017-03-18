@@ -637,6 +637,7 @@ public class EntrepreneurActivity extends AppCompatActivity {
 
 						} else {
 							((TextView) findViewById(R.id.textSelectedBusinessTypes)).setText(stringBuilder);
+							((TextView) findViewById(R.id.textSelectedBusinessTypes)).setError(null);
 						}
 					}
 				});
