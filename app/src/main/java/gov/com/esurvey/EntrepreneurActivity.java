@@ -80,7 +80,11 @@ public class EntrepreneurActivity extends AppCompatActivity {
 		eTextBlock = (EditText) findViewById(R.id.eTextBlock);
 		eTextVillage = (EditText) findViewById(R.id.eTextVillage);
 
+		eTextVillage.setKeyListener(null);
+
 		eTextName = (EditText) findViewById(R.id.eTextName);
+		eTextName.requestFocus();
+
 		eTextPhoneNumber = (EditText) findViewById(R.id.eTextPhoneNumber);
 		eTextYearStartBusiness = (EditText) findViewById(R.id.eTextYearStartBusiness);
 
@@ -710,6 +714,29 @@ public class EntrepreneurActivity extends AppCompatActivity {
 		listVillages.add("Tolawal");
 		listVillages.add("Ugrahan");
 
+		eTextVillage.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				if(hasFocus) {
+					final CharSequence[] dialogList = listVillages.toArray(new CharSequence[listVillages.size()]);
+					final AlertDialog.Builder builderDialog = new AlertDialog.Builder(EntrepreneurActivity.this);
+					builderDialog.setTitle("Select Village");
+					final AlertDialog alert = builderDialog.create();
+
+					builderDialog.setSingleChoiceItems(dialogList, -1,  new DialogInterface.OnClickListener() {
+
+						@Override
+						public void onClick(DialogInterface villageDialog, int selectedItemIndex) {
+							eTextVillage.setText(dialogList[selectedItemIndex]);
+							villageDialog.dismiss();
+						}
+					});
+
+					builderDialog.show();
+				}
+			}
+		});
 
 		eTextVillage.setOnClickListener(new View.OnClickListener() {
 
