@@ -32,9 +32,9 @@
             <LinearLayout android:weightSum="2" android:layout_width="fill_parent" android:layout_height="wrap_content"
                           android:orientation="horizontal">
                 <EditText android:id="@+id/noOfMonthsNormalSeason" android:inputType="number" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/noOfMonthsHighSeason" android:inputType="number" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
             <Space
@@ -48,9 +48,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/totalSalesCreditNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/totalSalesCreditHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
             <Space
@@ -63,9 +63,9 @@
             <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:orientation="horizontal"
                           android:weightSum="2">
                 <EditText android:id="@+id/totalSalesCashNormalSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/totalSalesCashHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
             <Space
@@ -79,10 +79,10 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/costRawMaterialCashNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/costRawMaterialCashHighSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
             <Space
@@ -96,9 +96,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/costRawMaterialCreditNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/costRawMaterialCreditHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
             <Space
@@ -112,9 +112,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/purchaseFrequencyNormalSeason" android:inputType="number"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/purchaseFrequencyHighSeason" android:inputType="number" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
             <Space
@@ -128,9 +128,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/wagesWithdrawnNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/wagesWithdrawnHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
             <Space
@@ -144,9 +144,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/rentNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/rentHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
             <Space
@@ -160,9 +160,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/electricityCostNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/electricityCostHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
             <Space
@@ -176,9 +176,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/transportationCostNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/transportationHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
 
@@ -193,9 +193,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/packagingCostNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/packagingCostHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
             <Space
@@ -209,9 +209,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/fuelCostNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/fuelCostHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
             <Space
@@ -225,9 +225,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/commissionNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/commissionHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
             <Space
@@ -241,9 +241,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/wastageCostNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/wastageCostHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
             <Space
@@ -257,9 +257,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/wagesPaidNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/wagesPaidHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
             <Space
@@ -273,9 +273,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/promotionCostNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/promotionCostHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
 
@@ -290,9 +290,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/communicationCostNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/communicationCostHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
             <Space
@@ -306,9 +306,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/machineRepairCostNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/machineRepairCostHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
 
@@ -323,9 +323,9 @@
                           android:weightSum="2">
                 <EditText android:id="@+id/otherCostNormalSeason" android:inputType="numberDecimal"
                           android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="Normal"/>
                 <EditText android:id="@+id/otherCostHighSeason" android:inputType="numberDecimal" android:layout_width="fill_parent"
-                          android:layout_height="wrap_content" android:layout_weight="1"/>
+                          android:layout_height="wrap_content" android:layout_weight="1" android:hint="High"/>
             </LinearLayout>
 
 
