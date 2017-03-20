@@ -96,7 +96,7 @@
                         android:id="@+id/radioVillageRoad"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/roadType_MajorRoad"/>
+                        android:text="@string/roadType_VillageRoad"/>
 
                 <RadioButton
                         android:id="@+id/radioLane"
